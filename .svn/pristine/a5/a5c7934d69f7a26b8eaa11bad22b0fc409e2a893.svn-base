@@ -1,0 +1,97 @@
+var app = getApp();
+var constract = require('../../../utils/constract.js');
+Page({
+  data: {
+    qwe:123,
+    items: [
+      // { name: 0, value: '未分组'},
+      // { name: 1, value: '同事'},
+      // { name: 2, value: '同学'},
+      // { name: 3, value: '朋友'},
+      // { name: 4, value: '供应商'},
+      // { name: 5, value: '其他'},
+    ]
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var that = this;
+    // var items=this.data.items;
+    // items[0].checked=true;
+    // this.setData({
+    //   items:items
+    // });
+    app.Verification(function (token) {
+      wx.request({
+        url: constract.findGroup,
+        header: { token: token},
+        success: function(res){
+          console.log(res);
+          res.data.data[0].checked = true;
+          that.setData({
+            items: res.data.data
+          });
+          // var items = that.data.items;
+          // for(var i = 0; i < items.length; i++){
+          //   if(items[i].check){
+          //     var id = items[i].id;
+          //     var group_name = items[i].group_name;
+          //   }
+          // }
+          // wx.request({
+          //   url: constract.other,
+          //   header: {token: token},
+          //   data: { passiveUid: id },
+          //   success: function (res2) {
+          //     console.log(res2);
+          //     wx.request({
+          //       url: constract.addOrEdit,
+          //       data: { groupid: id, uid: res2.id, group_name: group_name}
+          //     })
+          //   }
+          // });
+          
+        }
+      })
+    })
+  },
+  radioChange: function(e){
+    var value = e.detail.value;
+    var items = this.data.items;
+    for(var i = 0; i < items.length; i++){
+      if(items[i].checked){
+        items[i].checked = false;
+      }
+    }
+    items[value].checked = true;
+    
+    app.Verification(function (token) {
+      wx.request({
+        url: constract.distribution,
+        header: { token: token },
+        data: { collection_uid: options.id, group_id: items[value].id},
+        success: function(res){
+          console.log(res);
+          this.setData({
+            items: items
+          })
+        }
+      })
+    })
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  }
+})

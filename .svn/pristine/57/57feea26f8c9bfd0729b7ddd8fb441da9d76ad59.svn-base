@@ -1,0 +1,29 @@
+// authentication.js
+Page({
+  data: {
+    flag:true,
+    state:3
+  },
+
+  onShow: function (options) {
+  
+  },
+  upload: function(e) {
+    console.log(e);
+    var that=this;
+    wx.chooseImage({
+      success: function(res) {
+        console.log(res);
+        var tempFilePaths = res.tempFilePaths;
+        var type=e.target.dataset.type;
+        console.log(type);
+        that.setData({
+          tempFilePaths: tempFilePaths,
+          type:type,
+          flag:false
+        })
+
+      }
+    })
+  }
+})

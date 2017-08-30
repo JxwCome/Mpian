@@ -1,0 +1,63 @@
+<view class="mine-info-container">
+  <view class="info-box">
+    <image src="{{allow?'':'../../images/weixin.png'}}"></image>
+    <text>用户名</text>
+  </view>
+  <navigator class="to-ewm" url="url">
+    <image src="../../images/weixin.png"></image>
+  </navigator> 
+</view>
+<view class="mine-list-container">
+  <navigator class="mine-list-item" url="url" >
+    <view class="item-box add-border">
+      <text>赞我的</text>
+      <image src="../../images/weixin.png"></image>
+    </view>
+  </navigator>
+  <navigator class="mine-list-item" url="">
+    <view class="item-box add-border">
+      <text>收藏我的</text>
+      <image src="../../images/weixin.png"></image>
+    </view>
+  </navigator>
+  <navigator class="mine-list-item" url="../add-card/add-card" >
+    <view class="item-box add-border">
+      <text>我的印象</text>
+      <image src="../../images/weixin.png"></image>
+    </view>
+  </navigator>
+  <navigator class="mine-list-item" url="/pages/edit/edit" >
+    <view class="item-box add-border">
+      <text>编辑名片</text>
+      <image src="../../images/weixin.png"></image>
+    </view>
+  </navigator>
+  <navigator class="mine-list-item" url="authentication/authentication" >
+    <view class="item-box add-border">
+      <text>成为认证客户</text>
+      <view>
+        <text class="renz">未认证</text>
+        <image src="../../images/weixin.png"></image>
+      </view>
+      
+    </view>
+  </navigator>
+  <navigator class="mine-list-item mine-new" url="news/news" >
+    <view class="item-box">
+      <text>消息</text>
+      <image src="../../images/weixin.png"></image>
+    </view>
+  </navigator>
+  <view class="mine-list-item">
+    <view class="item-box add-border">
+      <text>联系客服</text>
+      <contact-button type="default-light"></contact-button>
+    </view>
+  </view>
+  <navigator class="mine-list-item" url="about/about" >
+    <view class="item-box add-border">
+      <text>关于</text>
+      <image src="../../images/weixin.png"></image>
+    </view>
+  </navigator>
+</view>

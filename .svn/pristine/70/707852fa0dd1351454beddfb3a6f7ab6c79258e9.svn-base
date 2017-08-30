@@ -1,0 +1,32 @@
+
+<template name="wxSortPickerView">
+    <scroll-view class="wxSortPickerViewList" scroll-y="true" bindscrolltoupper="wxSortPickerViewUpper" bindscrolltolower="wxSortPickerViewLower" bindscroll="wxSortPickerViewScroll" scroll-into-view="{{wxSortPickerData.wxSortPickerViewtoView}}" scroll-top="{{wxSortPickerData.wxSortPickerViewScrollTop}}">
+    <!--<view animation="{{wxSortPickerData.animationData}}" class="wxSortPickerViewList">-->
+        <!--<view class="wxSortPickerViewTag wxSortPickerViewFixedTag">{{wxSortPickerData.nowTag}}</view>-->
+        <block wx:for="{{wxSortPickerData.textData}}" wx:for-item="item" wx:key="">
+            <view id="{{item.tag}}" hidden="{{item.textArray==''?true:false}}" class="wxSortPickerViewTag">{{item.tag}}</view>
+            <template is="wxSortPickerViewItem" data="{{item}}"/>
+        </block>
+    <!--</view>-->
+    </scroll-view>
+
+    <!--<template is="wxSortPickerViewTemTags"/>-->
+</template>
+
+<template name="wxSortPickerViewItem">
+    <block wx:for="{{item.textArray}}" wx:for-item="child" wx:key="">
+        <navigator url="../details/details?id={{child.collection_uid}}" class="wxSortPickerViewItem" data-text="{{child.name}}"  bindtap = "wxSortPickerViewItemTap">
+            <image src="{{child.avatar}}" class="avatar"></image>
+            <text>{{child.name}}</text> 
+            <image src="/images/phone.png" class="icon-phone" data-phone="{{child.phone}}" catchtap="call"></image>           
+        </navigator>
+    </block>
+</template>
+
+<!--<template name="wxSortPickerViewTemTags">
+    <scroll-view style="width:20px;height: {{wxSortPickerData.view.scrollHeight}}px;" class="wxSortPickerViewTemTags">
+        <block wx:for="{{['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '#']}}" wx:for-item="item" wx:key="">
+            <view bindtap="wxSortPickerViewTemTagTap" data-tag="{{item}}" class="wxSortPickerViewTemTag">{{item}}</view>
+        </block>
+    </scroll-view>
+</template>-->

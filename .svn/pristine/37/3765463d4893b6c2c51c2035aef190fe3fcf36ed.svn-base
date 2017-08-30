@@ -1,0 +1,10 @@
+<block wx:for="{{news}}">
+  <view class="card-group" >
+    <view class="delete" catchtap="delete" data-id="{{item.id}}">删除</view>
+    <navigator url="/pages/partner/partner?uid={{item.uid}}" style="{{item.txtStyle}}" data-index="{{index}}" hover-class="none" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" class="group-up">
+      <image src="{{item.avatar}}"></image>
+      <text >{{item.name}}{{item.content}}</text>
+      <text class="time">{{item.create_time}}</text>
+    </navigator>
+  </view>
+</block>

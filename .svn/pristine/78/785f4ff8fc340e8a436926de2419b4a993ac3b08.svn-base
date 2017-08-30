@@ -1,0 +1,21 @@
+var constract = require('../../utils/constract.js');
+Page({
+  data: {
+    allow:false
+  },
+  onShow: function () {
+    var that=this;
+    var token = wx.getStorageSync('token');
+    wx.request({
+      url: constract.myData,
+      header:{token:token},
+      success:function(res){
+        console.log(res);
+        that.setData({
+          mydata:res.data.data
+        })
+      }
+    })
+    
+  }
+})

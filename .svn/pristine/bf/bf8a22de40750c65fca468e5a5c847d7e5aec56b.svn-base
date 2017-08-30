@@ -1,0 +1,64 @@
+//index.js
+//获取应用实例
+var app = getApp();
+var constract = require('../../utils/constract.js');
+Page({
+  data:{
+    erm:true,
+    show: false
+  },
+  onShow: function(){
+    var that = this;
+    app.Verification(function(token){
+      wx.request({
+        url: constract.index,
+        header:{token:token},
+        success:function(res){
+          console.log(res);
+          var userInfo=res.data.data;
+          that.setData({
+            userInfo: userInfo
+          });
+        }
+      });
+    })
+  },
+  share:function(){
+    this.setData({
+      show: true
+    })
+  },
+  know:function(){
+    this.setData({
+      show: false
+    })
+  },
+  generate:function(){
+    var certificState = this.data.userInfo.certificState;
+    if (certificState==null){
+      certificState=0;
+    }
+    app.Verification(function (token){
+      wx.request({
+        url: constract.generateImg,
+        header:{token:token},
+        data: { state: certificState},
+        success:function(res){
+          console.log(res);
+          var img=res.data.data;
+          wx.previewImage({
+            urls: [img]
+          })
+        }
+      })
+
+    })
+  },
+  onShareAppMessage:function(){
+    var id = this.data.userInfo.id;
+    return {
+      title: '您好这是我的名片，请惠存',
+      path: '/page/partner?id='+id
+    }
+  }
+})

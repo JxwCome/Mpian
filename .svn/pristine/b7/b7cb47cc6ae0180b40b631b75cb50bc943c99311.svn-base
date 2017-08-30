@@ -1,0 +1,61 @@
+.card-group {
+  width: 720rpx;
+  margin-left: 30rpx;
+  height: 150rpx;
+  line-height: 150rpx;
+  border-bottom: 1rpx solid #ddd;
+  position: relative;
+}
+.delete {
+  width: 120rpx;
+  position: absolute;
+  color: #fff;
+  right: 0;
+  top: 0;
+  text-align: center;
+  z-index: 2;
+  height: 150rpx;
+  line-height: 150rpx;
+  background-color: red;
+}
+
+.group-up {
+  width: 720rpx;
+  height: 150rpx;
+  line-height: 150rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  box-sizing: border-box;
+  padding-right: 30rpx;
+  color: #666;
+  font-size: 26rpx;
+}
+.group-up image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  vertical-align: middle;
+  margin-right: 28rpx;
+}
+.group-up .time {
+  float: right;
+  line-height: 150rpx;
+} 
+
+.nobody{
+  padding-top: 200rpx;
+  text-align: center;
+}
+.thumb{
+  width: 190rpx;
+  height: 170rpx;
+}
+.nobody-text{
+  margin-top: 140rpx;
+  display: block;
+  font-size: 30rpx;
+  color: #999;
+}

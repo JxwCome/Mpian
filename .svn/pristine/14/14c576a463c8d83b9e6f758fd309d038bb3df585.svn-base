@@ -1,0 +1,9 @@
+<view class="about-container">
+  <image src="/images/weixin.png"></image>
+  <text>名名mm</text>
+  <text class="edition">V1.0</text>
+  <text class="intro">名名mm是一款扩展职场人脉的社交工具，提供个人名片一键分享、收藏、贴标签等功能，使用方便快捷！</text>
+  <text class="public">关注公众号“名名mm服务号”，获取更多信息
+  Copyright 2017
+  </text>
+</view>

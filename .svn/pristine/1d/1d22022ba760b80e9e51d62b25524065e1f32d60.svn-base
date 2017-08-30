@@ -1,0 +1,43 @@
+<template name="impress">
+  <view class="label" bindtap="tap"  wx:for = "{{label}}">
+    {{item.text}}
+    <text class="label-num">{{item.id}}</text>
+  </view>
+  <view class="click-view">点击印象,可查看谁给我添加了该印象</view>
+</template>
+<template name="userInfo">
+  <view class="site-info">
+    <view class="info-name">
+      <text class="name">{{userInfo.name}}</text>
+      <image src="../../images/man.png" wx:if="{{userInfo.gender==1}}" class="sex-img" mode="aspectFit"></image>
+      <image src="../../images/woman.png" wx:else class="sex-img" mode="aspectFit"></image>
+      <text class="sex">{{userInfo.gender==1?"男":"女"}}</text>
+    </view>
+    <view class="info-suggest" wx:if="{{userInfo.job_title}}">
+      <image src="../../images/position.png" class="info-icon" mode="aspectFit"></image>
+      <text class="info-words">{{userInfo.job_title}}</text>
+    </view>
+    <view class="info-bottom-box">
+      <view class="info-suggest" wx:if="{{userInfo.company_name}}">
+        <image src="../../images/company.png" class="info-icon" mode="aspectFit"></image>
+        <text class="info-words">{{userInfo.company_name}}</text>
+      </view>
+      <view class="info-suggest">
+          <image src="../../images/call.png" class="info-icon" mode="aspectFit"></image>
+          <text class="info-words">{{userInfo.phone}}</text>
+      </view>
+      <view class="info-suggest" wx:if="{{userInfo.email}}">
+          <image src="../../images/mail.png" class="info-icon" mode="aspectFit"></image>
+          <text class="info-words">{{userInfo.email}}</text>
+      </view>
+    </view>
+    <view class="info-picture">
+      <image src="{{userInfo.avatar}}" class="picture"></image>
+      <image src="../../images/yirenzhengv.png" class="v" wx:if="{{userInfo.certificState==2}}"></image>
+      <image src="../../images/weirenzhengv.png" class="v" wx:else></image>
+    </view>
+    <navigator class="info-dimension" url="../code/code?id={{userInfo.id}}&qr_code={{userInfo.qr_code}}&name={{userInfo.name}}&avatar={{userInfo.avatar}}" wx:if="{{erm}}">
+      <image src="/images/erweima.png" class="dimension"></image>
+    </navigator>
+  </view>
+</template>

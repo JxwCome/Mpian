@@ -1,0 +1,28 @@
+.radio-group{
+  padding-left: 30rpx;
+}
+.revise-group,.radio{
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #999;
+  border-bottom: 1rpx solid #ddd;
+}
+.radio{
+  display: block;
+  color: #666;
+  position: relative;
+}
+.radio-icon{
+  position: absolute;
+  width: 24rpx;
+  height: 24rpx;
+  top: 30rpx;
+  left: 20rpx;
+}
+.radio radio{
+  padding-right: 30rpx;
+  opacity: 0;
+}
+.share-btn {
+  margin-top: 62rpx;
+}

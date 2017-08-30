@@ -1,0 +1,153 @@
+
+var label = {
+  data: [
+    {
+      text: '吃货',
+      id: 1
+    },
+    {
+      text: '购物狂',
+      id: 2
+    },
+    {
+      text: '疯狂',
+      id: 1
+    },
+    {
+      text: '女汉子',
+      id: 1
+    },
+    {
+      text: '小清新',
+      id: 2
+    }
+  ],
+  picture: '../../images/man.png',
+  v: '../../images/yirenzhengv.png',
+  dimension: '../../images/man.png'
+};
+var collect = {
+  list: [
+    {
+      img: '../../images/man.png',
+      name: '姓名'
+    },
+    {
+      img: '../../images/man.png',
+      name: '姓名'
+    },
+    {
+      img: '../../images/man.png',
+      name: '姓名'
+    }
+  ]
+};
+var praise = {
+  list: [
+    {
+      img: '../../images/man.png',
+      name: '姓名'
+    },
+    {
+      img: '../../images/man.png',
+      name: '姓名'
+    },
+    {
+      img: '../../images/man.png',
+      name: '姓名'
+    }
+  ]
+};
+var impress = {
+  labelTypeMan: [
+    { text: '老司机', id: 1},
+    { text: '肌肉男', id: 2},
+    { text: '工作狂', id: 3},
+    { text: '吃货', id: 4},
+    { text: '愤青', id: 5},
+    { text: '帅', id: 6},
+    { text: '自恋', id: 7},
+    { text: '热情',id: 8},
+    { text: '会生活', id: 9},
+    { text: '闷骚', id: 10},
+    { text: '靠谱', id: 11},
+    { text: '幽默', id: 12},
+    { text: '暖男', id: 13},
+    { text: '宅男', id: 14},
+    { text: '污', id: 15},
+    { text: '成熟', id: 16},
+    { text: '逗B', id: 17}
+  ],
+  labelTypeWoman: [
+    { text: '女神', id: 1},
+    { text: '老司机', id: 2},
+    { text: '萌妹子', id: 3},
+    { text: '吃货', id: 4},
+    { text: '情商高', id: 5},
+    { text: '宅', id: 6},
+    { text: '自恋', id: 7},
+    { text: '购物狂', id: 8},
+    { text: '学霸', id: 9},
+    { text: '小清新', id: 10},
+    { text: '强迫症', id: 11},
+    { text: '疯狂', id: 12},
+    { text: '高冷', id: 13},
+    { text: '女汉子', id: 14},
+    { text: '逗B', id: 15},
+    { text: '女神', id: 16}
+  ],
+  labelElse: [
+    {
+      text: '吃货',
+      id: 1
+    },
+    {
+      text: '购物狂',
+      id: 2
+    },
+    {
+      text: '疯狂',
+      id: 1
+    },
+    {
+      text: '女汉子',
+      id: 1
+    },
+    {
+      text: '小清新',
+      id: 2
+    }
+  ]
+};
+var effect = {
+  label:[
+    {
+      text: '吃货',
+      id: 1
+    },
+    {
+      text: '购物狂',
+      id: 2
+    },
+    {
+      text: '疯狂',
+      id: 1
+    },
+    {
+      text: '女汉子',
+      id: 1
+    },
+    {
+      text: '小清新',
+      id: 2
+    }
+  ]
+}
+
+module.exports = {
+  label: label,
+  collect: collect,
+  praise: praise,
+  impress: impress,
+  effect: effect
+}

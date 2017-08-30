@@ -1,0 +1,70 @@
+//index.js
+//获取应用实例
+var app = getApp();
+var constract = require('../../utils/constract.js');
+Page({
+  data:{
+    show: false
+  },
+  onShow: function(){
+    var that = this;
+    wx.request({
+      url: constract.index,
+      data:{uid:1},
+      success:function(res){
+        var userInfo=res.data.data;
+        that.setData({
+          userInfo: userInfo
+        });
+      }
+    })
+    wx.login({
+      success: function (res) {
+        console.log(res);
+        wx.request({
+          url: "https://mingming.bb2bb.com/mingming/token/login",
+          data: {code: res.code},
+          success: function (res2) {
+            console.log(res2);
+            console.log(res2.data.data)
+            wx.getUserInfo({
+              success: function (res3) {
+                console.log(res3);
+                wx.request({
+                  url: "https://mingming.bb2bb.com/mingming/token/register",
+                  method:"get",
+                  data: {thirdSesson: res2.data.data,rawData: res3.rawData,signature: res3.signature,encryptedData: res3.encryptedData,iv: res3.iv},
+                  success: function (res4) {
+                    console.log(res4);
+                  }
+                })
+              }
+            })
+          }
+        })
+
+      }
+    })
+  },
+  share:function(){
+    this.setData({
+      show: true
+    })
+  },
+  know:function(){
+    this.setData({
+      show: false
+    })
+  },
+  generate:function(){
+    var state = this.data.userInfo.state;
+    console.log(state);
+    wx.request({
+      url: constract.generateImg,
+      data:{uid:1,state:state},
+      success:function(res){
+        console.log(res);
+      }
+    })
+  }
+})

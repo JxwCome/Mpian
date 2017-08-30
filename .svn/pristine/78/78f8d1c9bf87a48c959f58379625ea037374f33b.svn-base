@@ -1,0 +1,14 @@
+page {
+  font-size: 30rpx;
+}
+.modify-container {
+  width: 690rpx;
+  margin: 0 auto;
+}
+.modify-tit {
+  color: #999;
+  width: 100%;
+  height: 82rpx;
+  border-bottom: 1rpx solid #999;
+  line-height: 82rpx;
+}

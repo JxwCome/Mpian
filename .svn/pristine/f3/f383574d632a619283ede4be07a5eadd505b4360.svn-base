@@ -1,0 +1,100 @@
+// news.js
+Page({
+
+  data: {
+    news:[
+      {
+        "id": 1,
+        "create_time": "2017-05-11 13:27:35",
+        "name": "刘博华",
+        "uid": 1,
+        "avatar": "http://zmei.oss-cn-hangzhou.aliyuncs.com/webadmin/2017051116300154745.png",
+        "state": 0,
+        "content": "赞了你"
+      },
+      {
+        "create_time": "2017-05-11 15:12:19",
+        "name": "王魏",
+        "id": 3,
+        "avatar": "http://zmei.oss-cn-hangzhou.aliyuncs.com/webadmin/2017051116300154745.png",
+        "state": 1,
+        "content": "收藏了你"
+      }
+    ]
+  },
+  onShow: function () {
+  
+  },
+  delete: function (e) {
+    var that = this;
+    console.log(e);
+    var id = e.target.dataset.id;
+    console.log(id);
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除这条消息么？',
+      success: function (res) {
+        var list = that.data.news;
+        if (res.confirm) {
+          for (var i = 0; i < list.length; i++) {
+            if (list[i].id == id) {
+              list.splice(i, 1);
+
+            }
+          };
+          console.log(list);
+          that.setData({
+            news: list
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  touchstart: function (e) {
+    if (e.touches.length == 1) {
+      this.setData({
+        startX: e.touches[0].clientX
+      })
+    }
+  },
+  touchmove: function (e) {
+    var that = this;
+    if (e.touches.length == 1) {
+      var moveX = e.touches[0].clientX;
+      var disX = that.data.startX - moveX;
+
+      var txtStyle = '';
+      if (disX == 0 || disX < 0) {
+        txtStyle = "left:0px";
+      } else if (disX > 0 && disX < 50) {
+        txtStyle = "left:-" + disX + "px";
+      } else {
+        txtStyle = "left:-120rpx";
+      }
+      var index = e.currentTarget.dataset.index;
+      var list = this.data.news;
+      list[index].txtStyle = txtStyle;
+      this.setData({
+        news: list
+      })
+    };
+  },
+  touchend: function (e) {
+    if (e.changedTouches.length == 1) {
+      var endX = e.changedTouches[0].clientX;
+      var disX = this.data.startX - endX;
+      var txtStyle = disX > 50 ? "left:-120rpx" : "left:0px";
+      console.log(e);
+      var index = e.currentTarget.dataset.index;
+      console.log(index);
+      var list = this.data.news;
+      console.log(list);
+      list[index].txtStyle = txtStyle;
+      this.setData({
+        news: list
+      })
+    }
+  }
+})

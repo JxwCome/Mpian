@@ -1,0 +1,68 @@
+<block wx:if="{{user.state=='null'||user.state==0}}">
+  <view class="container" wx:if="{{flag}}">
+    <view class="authentication-tit">选择以下任一材料，证明你的职业身份</view>
+    <view class="authentication-body">
+      <view class="upload-item-box">
+        <view class="upload-item" data-type="1" catchtap="upload">
+          <text>名片</text>
+          <image src="/images/mingpian.png" class="mingpian"></image>
+        </view>
+        <view class="level">一级认证</view>
+      </view>
+      <view class="upload-item-box">
+        <view class="upload-item" data-type="2" catchtap="upload">
+          <text>工牌</text>
+          <image src="/images/gongpai.png" class="mingpian"></image>
+        </view>
+        <view class="level">一级认证</view>
+      </view>
+      <view class="upload-item-box">
+        <view class="upload-item" catchtap="upload" data-type="3">
+          <text>在职证明</text>
+          <image src="/images/zaizhizhengming.png" class="mingpian"></image>
+        </view>
+        <view class="level">一级认证</view>
+      </view>
+      <view class="upload-item-box">
+        <view class="upload-item" catchtap="upload" data-type="4">
+          <text>身份证</text>
+          <image src="/images/shenfenzheng.png" class="mingpian"></image>
+        </view>
+        <view class="level">二级认证</view>
+      </view>
+    </view> 
+    <view class="authentication-ps">认证后将点亮V图标，获得优质人脉的关注</view>
+  </view>
+  <view class="upload-container" wx:else>
+    <image src="{{user.img}}" mode="aspectFit"></image>
+    <text>点击图片可重新上传</text>
+    <button type="primary" class="share-btn" bindtap="submit">提交认证</button>
+  </view>
+</block>
+
+<block wx:if="{{user.state==1}}">
+  <view class="upload-container">
+    <image src="{{user.img}}" mode="aspectFit"></image>
+    <text>提交成功，将在48个小时内审核，请耐心等待！</text>
+  </view>
+</block>
+
+<block wx:if="{{user.state==2}}">
+  <view class="success-container">
+    <view class="success-tit">恭喜！您的职业身份已认证</view>
+    <image src="{{user.img}}" mode="aspectFit"></image>
+    <view class="ps-tit">温馨提示 </view>
+    <text class="success-ps">点击菜单“发现-小程序”可以找到小程序“名名mm”</text>
+    <button type="primary" class="share-btn" bindtap="resubmit">重新认证</button>
+  </view>
+</block>
+
+<block wx:if="{{user.state==3}}">
+  <view class="success-container">
+    <view class="success-tit">您的职业身份认证未通过！</view>
+    <image src="{{user.img}}" mode="aspectFit"></image>
+    <view class="ps-tit">选择以下任一材料，证明你的职业身份</view>
+    <view class="ps-info">名片、工牌、在职证明、身份证</view>
+    <button type="primary" class="share-btn" bindtap="resubmit" wx:if="{{user.type!==4}}">重新认证</button>
+  </view>
+</block>

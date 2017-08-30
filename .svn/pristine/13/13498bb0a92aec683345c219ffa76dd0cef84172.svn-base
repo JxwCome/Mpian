@@ -1,0 +1,99 @@
+var app = getApp();
+var constract = require('../../../utils/constract.js');
+Page({
+  data: {
+    
+  },
+  onLoad: function (options) {
+      console.log(options);
+      var gender = options.gender;
+      var that = this;
+      app.Verification(function (token) {
+        wx.request({
+          url: constract.allMyImpression,
+          header: { token: token },
+          success: function (res) {
+            console.log(res);
+            var MyImpression = res.data.data;
+            
+            that.setData({
+              MyImpression: MyImpression
+            });
+            if (!MyImpression.length) {
+              wx.request({
+                url: constract.label,
+                header: { token: token },
+                success:function(res){
+                  var label=res.data.data;
+                  for(var i=0;i<label.length;i++){
+                    label.checked=false;
+                  }
+                  that.setData({
+                    label: label,
+                    gender:gender
+                  });
+                }
+              })
+            }
+          }
+        });
+      });
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+  check: function(e){
+    var that=this;
+    var index=e.target.dataset.index;
+    var label=this.data.label;
+    var num=0;
+    label[index].checked = !label[index].checked;
+    that.setData({
+      label:label
+    });
+    for (var i = 0; i < label.length; i++) {
+      if (label[i].checked) {
+        num++;
+      }
+    };
+    console.log(num);
+    if (num > 5) {
+      wx.showModal({
+        title: '提示',
+        content: '最多添加五个印象',
+        showCancel: false
+      });
+      label[index].checked = !label[index].checked;
+      that.setData({
+        label: label
+      });
+    }
+  },
+  save:function(){
+    var label=this.data.label;
+    var impression = '';
+    for (var i = 0; i < label.length; i++) {
+      if (label[i].checked) {
+        impression += label[i].name;
+        impression += ',';
+      }
+    }
+    var impression = impression.substring(0, impression.length - 1);
+    console.log(impression);
+    app.Verification(function (token) {
+      wx.request({
+        url: constract.impressionAddOrEdit,
+        header: { token: token },
+        data: { impression_name: impression},
+        success: function (res) {
+          console.log(res);
+          wx.navigateBack();
+        }
+      });
+    })
+  }
+})

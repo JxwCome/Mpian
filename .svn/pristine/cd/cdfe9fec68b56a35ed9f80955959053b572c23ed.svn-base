@@ -1,0 +1,45 @@
+/* partner.wxss */
+@import "/template/tem-impress.wxss";
+.site-impress{
+  width: 100%;
+  border-bottom: 6rpx solid #f2f2f2;
+}
+.provide{
+  text-align: center;
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 76rpx;
+}
+.site-footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 88rpx;
+  width: 100%;
+  border-top: 1rpx solid #bdbdbd;
+  line-height: 88rpx;
+  text-align: center;
+  background-color: #f7f7f8;
+}
+.footer-collect,.footer-set{
+  float: left;
+  width: 50%;
+  font-size: 28rpx;
+  color: #333;
+}
+.info-icon-scale{
+  -webkit-animation: boost 1s linear 0s 1;
+  animation: boost 1s linear 0s 1;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;  
+}
+@-webkit-keyframes boost{
+  0%{transform: scale(1,1);}
+  50%{transform: scale(2,2);}
+  100%{transform: scale(1,1);}
+}
+@keyframes boost{
+  0%{transform: scale(1,1);}
+  50%{transform: scale(2,2);}
+  100%{transform: scale(1,1);}
+}

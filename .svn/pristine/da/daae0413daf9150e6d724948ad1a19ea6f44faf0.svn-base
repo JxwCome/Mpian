@@ -1,0 +1,38 @@
+Page({
+  data: {
+    allow: false,
+    kao: "kao",
+    painting: '../../images/weixin.png',
+    name: '姓名',
+    dimension: '../../images/weixin.png'
+  },
+  onLoad: function (options) {
+    console.log(options);
+    this.setData({
+      avatar: options.avatar,
+      name: options.name
+    })
+    wx.request({
+      url: 'https://api.weixin.qq.com/cgi-bin/token',
+      data: { grant_type: "client_credential",
+              appid: "wx299f724e876813e4",
+              secret: "5ce5199a783e9663c2b67283ec440232"
+            },
+      success:function(res){
+        console.log(res);
+        wx.request({
+          url: 'https://api.weixin.qq.com/wxa/getwxacode?access_token=' + res.data.access_token,
+          method:"POST",
+          data:{
+            path:"/pages/partner/partner?id="+options.id,
+            width:340
+          },
+          success:function(res){
+            console.log(res)
+          }
+        })
+      }
+      
+    })
+  }
+})

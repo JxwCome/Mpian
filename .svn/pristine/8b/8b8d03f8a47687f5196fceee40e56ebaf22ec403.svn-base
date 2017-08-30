@@ -1,0 +1,105 @@
+var proof = require('../../utils/proof.js');
+var constract = require('../../utils/constract.js');
+var app = getApp();
+Page({
+  data: {
+  
+  },
+
+  onLoad: function (options) {
+
+  },
+  onShow: function () {
+    var that=this;
+    app.Verification(function (token) {
+      wx.request({
+        url: constract.index,
+        header: { token: token },
+        success: function (res) {
+          console.log(res);
+          var userInfo = res.data.data;
+          that.setData({
+            userInfo: userInfo,
+            avatar: userInfo.avatar
+          });
+        }
+      });
+    })
+  },
+  avatar: function () {
+    var that = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
+        var tempFilePaths = res.tempFilePaths[0];
+        that.setData({
+          avatar: tempFilePaths
+        })
+      }
+    })
+  },
+  submit:function(e){
+    var data = e.detail.value;
+    var name = e.detail.value.name;
+    var email = e.detail.value.email;
+    var avatar = this.data.avatar;
+    console.log(avatar);
+    if (proof.trim(name)==''){
+      wx.showModal({
+        title: '提示',
+        content: '姓名不能为空',
+        showCancel: false
+      });
+      return;
+    };
+    if (proof.trim(email)!==''){
+      if (!proof.isEmail(email)){
+        wx.showModal({
+          title: '提示',
+          content: '请输入正确的邮箱格式',
+          showCancel: false
+        });
+        return;
+      }
+    };
+    app.Verification(function (token) {
+      // wx.uploadFile({
+      //   url: constract.userEdit,
+      //   header: { token: token },
+      //   // filePath: "pic.51fen.com/webadmin/2017053110161912612.png",
+      //   // name: 'avatar',
+      //   header:{token:token},
+      //   formData:data,
+      //   success: function (res) {
+      //     console.log(res);
+      //     wx.navigateBack();
+      //   },
+      //   fail:function(res){
+      //     console.log(res);
+      //   }
+      // });
+      wx.request({
+        url: constract.userEdit,
+        header:{token:token},
+        data:data,
+        success:function(res){
+          console.log(res);
+          wx.uploadFile({
+            url: constract.imgsUpdate,
+            header: { token: token },
+            filePath: avatar,
+            name: "avatar",
+            complete: function (res) {
+              console.log(res);
+              wx.navigateBack();
+            }
+
+          })
+        }
+
+      })
+    })
+  }
+})

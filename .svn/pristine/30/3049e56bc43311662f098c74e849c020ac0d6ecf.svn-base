@@ -1,0 +1,64 @@
+var label = {
+  data: [
+    {
+      text: '吃货',
+      id: 1
+    },
+    {
+      text: '购物狂',
+      id: 2
+    },
+    {
+      text: '疯狂',
+      id: 1
+    },
+    {
+      text: '女汉子',
+      id: 1
+    },
+    {
+      text: '小清新',
+      id: 2
+    }
+  ],
+  picture: '../../images/weixin.png',
+  dimension: '../../images/sun.png'
+};
+var collect = {
+  list: [
+    {
+      img: '../../images/sun.png',
+      name: '姓名'
+    },
+    {
+      img: '../../images/sun.png',
+      name: '姓名'
+    },
+    {
+      img: '../../images/sun.png',
+      name: '姓名'
+    }
+  ]
+};
+var praise = {
+  list: [
+    {
+      img: '../../images/sun.png',
+      name: '姓名'
+    },
+    {
+      img: '../../images/sun.png',
+      name: '姓名'
+    },
+    {
+      img: '../../images/sun.png',
+      name: '姓名'
+    }
+  ]
+}
+
+module.exports = {
+  label: label,
+  collect: collect,
+  praise: praise
+}

@@ -1,0 +1,25 @@
+.my-dimension{
+  width: 100%;
+  text-align: center;
+}
+.my-painting{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 10rpx;
+  margin-top: 80rpx;
+}
+.my-name{
+  font-size: 36rpx;
+  color: #333;
+  margin-top: 45rpx;
+}
+.dimension{
+  margin-top: 130rpx;
+  width: 340rpx;
+  height: 340rpx;
+}
+.scan{
+  margin-top: 86rpx;
+  font-size: 26rpx;
+  color: #999;
+}

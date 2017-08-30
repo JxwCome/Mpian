@@ -1,0 +1,72 @@
+<view class="mine-info-container">
+  <view class="info-box">
+    <view class="info-picture">
+      <image src="{{mydata.avatar}}" class="picture"></image>
+      <image src="/images/yirenzhengv.png" class="v" wx:if="{{mydata.certificState==2}}"></image>
+      <image src="/images/weirenzhengv.png" class="v" wx:else></image>
+    </view>
+    <text class="info-name" wx:if="{{mydata.name}}">{{mydata.name}}</text>
+    <text class="info-job" wx:if="{{mydata.job_title}}">{{mydata.job_title}}</text>
+    <text class="info-company" wx:if="{{mydata.company_name}}">{{mydata.company_name}}</text>
+  </view>
+  <navigator class="to-ewm" wx:if="{{mydata.state}}" url="/pages/code/code?id={{mydata.id}}&name={{mydata.name}}&avatar={{mydata.avatar}}">
+    <image src="../../images/erweima.png"></image>
+  </navigator> 
+</view>
+<view class="mine-list-container">
+  <navigator class="mine-list-item" url="../collect/collect?type=1" >
+    <view class="item-box add-border">
+      <text>赞我的</text>
+      <image src="../../images/back.png"></image>
+    </view>
+  </navigator>
+  <navigator class="mine-list-item" url="../collect/collect?type=2">
+    <view class="item-box add-border">
+      <text>收藏我的</text>
+      <image src="../../images/back.png"></image>
+    </view>
+  </navigator>
+  <navigator class="mine-list-item" url="{{mydata.state?'/pages/index/impress/impress?gender='+mydata.gender:''}}" >
+    <view class="item-box add-border">
+      <text>我的印象</text>
+      <image src="../../images/back.png"></image>
+    </view>
+  </navigator>
+  <navigator class="mine-list-item" url="{{mydata.state?'/pages/edit/edit':''}}" >
+    <view class="item-box add-border">
+      <text>编辑名片</text>
+      <image src="../../images/back.png"></image>
+    </view>
+  </navigator>
+  <navigator class="mine-list-item" url="authentication/authentication?state={{mydata.certificState}}&perstate={{mydata.state}}" >
+    <view class="item-box add-border">
+      <text>成为认证客户</text>
+      <view>
+        <text class="renz">{{mydata.certificState==2?"已认证":"未认证"}}</text>
+        <image src="../../images/back.png"></image>
+      </view>
+      
+    </view>
+  </navigator>
+  <navigator class="mine-list-item mine-new" url="news/news" >
+    <view class="item-box">
+      <text>消息</text>
+      <view>
+        <text class="count" hidden="{{!mydata.count}}">{{mydata.count}}</text>
+        <image src="../../images/back.png"></image> 
+      </view>
+    </view>
+  </navigator>
+  <view class="mine-list-item">
+    <view class="item-box add-border">
+      <text>联系客服</text>
+      <contact-button type="default-dark"></contact-button>
+    </view>
+  </view>
+  <navigator class="mine-list-item" url="about/about" >
+    <view class="item-box add-border">
+      <text>关于</text>
+      <image src="../../images/back.png"></image>
+    </view>
+  </navigator>
+</view>

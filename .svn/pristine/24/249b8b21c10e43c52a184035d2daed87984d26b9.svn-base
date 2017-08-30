@@ -1,0 +1,10 @@
+<!--全部印象-->
+<view wx:if = "{{}}">
+
+</view>
+<view wx:if = "{{}}">
+
+</view>
+<view wx:else class="">
+
+</view>

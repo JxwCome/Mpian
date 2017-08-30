@@ -1,0 +1,9 @@
+<block wx:if="{{imperfect}}">
+  <view class="imperfect-container">
+    <image src="../../images/weixin.png"></image>
+    <text>完善资料即可建立职场知名度哦~</text>
+    <button type="primary" class="share-btn">立即完善资料</button>
+  </view>
+</block>
+<block wx:else>
+</block>

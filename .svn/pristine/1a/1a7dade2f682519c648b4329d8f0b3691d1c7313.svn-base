@@ -1,0 +1,75 @@
+<view class="site-info">
+  <view class="info">
+      <view class="info-name">
+        <text class="name">{{name}}</text>
+        <image src="../../images/man.png" class="sex-img"></image>
+        <text class="sex">{{sex}}</text>
+      </view>
+      <view class="info-job">
+        <image src="../../images/position.png" class="info-icon"></image>
+        <text class="info-words">{{job}}</text>
+      </view>
+      <view class="info-company">
+        <image src="../../images/company.png" class="info-icon"></image>
+        <text class="info-words">{{company}}</text>
+      </view>
+      <view class="info-telephone">
+         <image src="../../images/call.png" class="info-icon"></image>
+         <text class="info-words">{{telephone}}</text>
+      </view>
+      <view class="info-email">
+         <image src="../../images/mail.png" class="info-icon"></image>
+         <text class="info-words">{{email}}</text>
+      </view>
+      <view class="info-picture">
+        <image src="{{picture}}" class="picture"></image>
+        <image src="{{v}}" class="v"></image>
+      </view>
+    </view>
+
+</view>
+<view class="site-human">
+  <view class="human-item">
+    <image src="../../images/renqi.png" class="info-icon"></image>
+    <text class="item-text">{{human}}点人气</text>
+  </view>
+  <view class="human-item">
+    <image src="../../images/praise.png" class="info-icon" hidden="{{!flag}}" catchtap="praise"></image>
+    <image src="../../images/praise.png" class="info-icon info-icon-scale" hidden="{{flag}}" catchtap="praised"></image>
+    <text class="item-text">{{upvote}}人点赞</text>
+  </view>
+  <view class="human-item">
+    <image src="../../images/collect.png" class="info-icon" hidden="{{!sep}}" catchtap="collect"></image>
+    <image src="../../images/collect.png" class="info-icon info-icon-scale" hidden="{{sep}}" catchtap="collected"></image>
+    <text class="item-text">{{collect}}人收藏</text>
+  </view>
+</view>
+<view class="site-about">
+  <navigator class="about-mine">
+    <text>关于我</text>
+    <image src="../../images/sun.png"></image>
+  </navigator>
+  <text class="about-introduce">一句话介绍一下自己，让更多的人了解你</text>
+</view>
+<view class="site-group">
+  <navigator class="about-mine">
+    <text>朋友分组</text>
+    <image src="../../images/sun.png"></image>
+  </navigator>
+  <text class="about-introduce">{{group}}</text>
+</view>
+<view class="site-impress">
+  <text class="my-impress">朋友印象</text>
+  <view class="impress-label label-height" wx:if = "{{label == ''}}">
+    <text class="examine">没有朋友给你添加印象</text>
+  </view>
+  <view class="impress-label" wx:else>
+    <view class="label"  wx:for = "{{label}}">
+      <text class="label-text">{{item.text}}</text>
+      <text class="label-num">{{item.id}}</text>
+    </view>
+  </view> 
+  <navigator url="her-impress/her-impress" class="all-impress" hover-class="none">
+    <text class="examine">查看全部印象></text>
+  </navigator>
+</view>

@@ -1,0 +1,14 @@
+<view class="nobody" wx:if="{{!collect.length}}">
+  <image src='../../images/dianzan.png' wx:if="{{type==1}}" class="thumb"></image>
+  <image src='../../images/shoucang.png' wx:if="{{type==2}}" class="thumb"></image>
+  <image src='../../images/lianxiren.png' wx:if="{{type==4}}" class="thumb"></image>
+  <text class="nobody-text" wx:if="{{type==1}}">还没有人点赞哦</text>
+  <text class="nobody-text" wx:if="{{type==2}}">还没有人收藏哦</text>
+  <text class="nobody-text" wx:if="{{type==4}}">还没有联系人哦</text>
+</view>
+<block wx:if="{{collect.length}}">
+  <navigator url="../partner/partner?id={{type==4?item.collection_uid:item.id}}" class="praise-list" wx:for="{{collect}}">
+    <image src="{{item.avatar}}" class="list-img"></image>
+    <text class="list-text">{{item.name}}</text>
+  </navigator>
+</block>

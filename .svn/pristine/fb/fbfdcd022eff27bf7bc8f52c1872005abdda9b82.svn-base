@@ -1,0 +1,170 @@
+.site-info{
+  overflow: hidden;
+}
+
+.info{
+  margin: 10rpx;
+  position: relative;
+  padding: 20rpx;
+  box-shadow: 0 0 20rpx rgba(0,0,0,0.1);
+}
+.info-name,.info-job,.info-company,.info-telephone,.info-email{
+  margin-bottom: 30rpx;
+  color: #333;
+  overflow: hidden;
+  height: 32rpx;
+  line-height: 32rpx;
+}
+.info-name{
+  margin-top: 20rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  display: flex;
+  align-items: center;
+}
+.info-job{
+  margin-bottom: 60rpx;
+}
+.info-icon{
+  width: 30rpx;
+  height: 30rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.info-words{
+  font-size: 30rpx;
+}
+.name,.sex,.job{
+  font-size: 36rpx;
+  margin-right: 40rpx;
+  color: #333;
+}
+.sex,.job{
+  font-size: 30rpx;
+}
+.sex{
+  display: inline-block;
+  margin-top: 2rpx;
+}
+.sex-img{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 6rpx;
+}
+.info-picture{
+  position: absolute;
+  right: 20rpx;
+  top: 38rpx;
+}
+.picture{
+  width: 120rpx;
+  height: 120rpx;
+}
+.info-icon-scale{
+  -webkit-animation: boost 1s linear 0s 1;
+  animation: boost 1s linear 0s 1;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;  
+}
+@-webkit-keyframes boost{
+  0%{transform: scale(1,1);}
+  50%{transform: scale(2,2);}
+  100%{transform: scale(1,1);}
+}
+@keyframes boost{
+  0%{transform: scale(1,1);}
+  50%{transform: scale(2,2);}
+  100%{transform: scale(1,1);}
+}
+.site-human{
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  border-bottom: 10rpx solid #f2f2f2;
+  overflow: hidden;
+}
+.human-item{
+  width: 33.33%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-text{
+  font-size: 24rpx;
+}
+.site-about,.site-group{
+  border-bottom: 10rpx solid #f2f2f2;
+}
+.about-mine,.about-introduce{
+  height: 70rpx;
+  display: block;
+  line-height: 70rpx;
+  padding: 0 30rpx;
+}
+.about-mine text{
+  font-size: 28rpx;
+}
+.about-mine image{
+  float: right;
+  margin-top: 24rpx;
+  width: 12rpx;
+  height: 22rpx;
+}
+.about-introduce{
+  color: #999;
+  line-height: 60rpx;
+  font-size: 25rpx;
+}
+.site-impress{
+  width: 100%;
+}
+.my-impress{
+  padding-left: 30rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  line-height: 70rpx;
+}
+.impress-label{
+  overflow: hidden;
+  padding: 0 30rpx;
+}
+.label-height{
+  height: 150rpx;
+  line-height: 150rpx;
+}
+navigator,.label{
+  display: inline-block;
+}
+.label{
+  float: left;
+  margin: 0 20rpx 20rpx 0;
+  color: #fff;
+}
+.label-text{
+  float: left;
+  padding: 0 12rpx;
+  background: #68C49F;
+  border-bottom-left-radius: 8rpx;
+  border-top-left-radius: 8rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+
+}
+.label-num{
+  float: left;
+  padding: 0 12rpx;
+  background: #209C82;
+  border-top-right-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+}
+.all-impress{
+  text-align: center;
+  display: block;
+  margin-bottom: 30rpx;
+}
+.examine{
+  font-size: 26rpx;
+  color: #999;
+}

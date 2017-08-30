@@ -1,0 +1,10 @@
+<view class="nobody" wx:if="{{allow == 1}}">
+  <image src="../../images/praise.png" class="thumb"></image>
+  <text class="nobody-text">还没有人点赞哦</text>
+</view>
+<block class="" wx:else>
+  <view class="praise-list" wx:for="{{praise}}">
+    <image src="{{item.img}}" class="list-img"></image>
+    <text class="list-text">{{item.name}}</text>
+  </view>
+</block>

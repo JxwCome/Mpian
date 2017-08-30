@@ -1,0 +1,29 @@
+.about-container {
+  width: 690rpx;
+  margin: 0 auto 60rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-container image {
+  width: 152rpx;
+  height: 152rpx;
+  border-radius: 50%;
+  margin-top: 102rpx;
+  margin-bottom: 40rpx;
+}
+.about-container .edition {
+  font-size: 26rpx;
+  margin: 44rpx 0 72rpx;
+  color: #999;
+}
+.about-container .intro {
+  line-height: 48rpx;
+  font-size: 26rpx;
+}
+.about-container .public {
+  margin-top: 530rpx;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 36rpx;
+}

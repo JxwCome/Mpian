@@ -1,0 +1,63 @@
+Page({
+  data: {
+    allow: false,
+    kao: "kao",
+    labelTypeMan: [
+      { text: '老司机' },
+      { text: '肌肉男' },
+      { text: '工作狂' },
+      { text: '吃货' },
+      { text: '愤青' },
+      { text: '帅' },
+      { text: '自恋' },
+      { text: '热情' },
+      { text: '会生活' },
+      { text: '闷骚' },
+      { text: '靠谱' },
+      { text: '幽默' },
+      { text: '暖男' },
+      { text: '宅男' },
+      { text: '污' },
+      { text: '成熟' },
+      { text: '逗B'}
+    ],
+    labelTypeWoman: [
+      { text: '女神' },
+      { text: '老司机' },
+      { text: '萌妹子' },
+      { text: '吃货' },
+      { text: '情商高' },
+      { text: '宅' },
+      { text: '自恋' },
+      { text: '购物狂' },
+      { text: '学霸' },
+      { text: '小清新' },
+      { text: '强迫症' },
+      { text: '疯狂' },
+      { text: '高冷' },
+      { text: '女汉子' },
+      { text: '逗B' }
+    ]
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+      console.log(options)
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  }
+})

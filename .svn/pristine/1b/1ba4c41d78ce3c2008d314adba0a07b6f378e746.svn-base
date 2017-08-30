@@ -1,0 +1,45 @@
+<!--全部印象-->
+<block wx:if = "{{}}">
+  <view class="people-sex">
+    <image src="../../../images/man.png" class="sex-icon"></image>
+    <text class="sex-text">我是男生</text>
+  </view>
+  <view class="people-label">
+    <text class="label-type" wx:for = "{{labelTypeMan}}">{{item.text}}</text>
+  </view>
+  <view class="site-share">
+    <text class="share-text">最多选择5个印象</text>
+    <button type="primary" class="share-btn">保存信息</button>
+  </view>
+</block>
+<block wx:if = "{{kao == ''}}">
+  <view class="people-sex">
+    <image src="../../../images/woman.png" class="sex-icon"></image>
+    <text class="sex-text">我是女生</text>
+  </view>
+  <view class="people-label">
+    <text class="label-type" wx:for = "{{labelTypeWoman}}">{{item.text}}</text>
+  </view>
+  <view class="site-share">
+    <text class="share-text">最多选择5个印象</text>
+    <button type="primary" class="share-btn">保存信息</button>
+  </view>
+</block>
+<view wx:if = "{{kao == 0}}" class="sensation">
+  <view class="label"  wx:for = "{{labelElse}}">
+    <text class="label-text">{{item.text}}</text>
+    <text class="label-num">{{item.id}}</text>
+  </view>
+  <view class="click-view">点击印象,可查看谁给我添加了该印象</view>
+</view>
+<view wx:else class="sensation">
+  <view class="label"  wx:for = "{{labelElse}}">
+    <text class="label-text">{{item.text}}</text>
+    <text class="label-num">{{item.id}}</text>
+  </view>
+  <view class="click-view">点击印象,评价您心中的好友印象</view>
+  <view class="new-impress">
+    <navigator type="primary" url="new-impress/new-impress" class="new-impress-btn">添加新的印象</navigator>
+    <view class="new-impress-text">上面的印象不合适? 添加一个试试</view>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+<block wx:for="{{news}}" wx:if="{{news.length}}">
+  <view class="card-group" >
+    <view class="delete" catchtap="delete" data-id="{{item.id}}">删除</view>
+    <navigator url="/pages/partner/partner?id={{item.uid}}" style="{{item.txtStyle}}" data-index="{{index}}" data-id="{{item.id}}" hover-class="none" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" bindtap="edit" class="group-up">
+      <image src="{{item.avatar}}"></image>
+      <view class="group-up-title">
+        <text class="name">{{item.name}}</text>
+        <text>{{item.content}}</text>
+        <view class="time">{{item.create_time}}</view>
+      </view>
+      <view class="red-spot" hidden="{{item.state}}"></view>
+    </navigator>
+  </view>
+</block>
+<view class="nobody" wx:if="{{news.length==0}}">
+  <image src='/images/notice.png' class="thumb"></image>
+  <text class="nobody-text">暂无通知哦</text>
+  <text class="nobody-text"></text>
+</view>

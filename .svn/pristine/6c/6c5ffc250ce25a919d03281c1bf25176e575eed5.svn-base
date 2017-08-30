@@ -1,0 +1,11 @@
+<radio-group class="radio-group" bindchange="radioChange">
+  <view class="revise-group">修改分组</view>
+  <label class="radio" wx:for="{{items}}" bingchange="tapIcon">
+    <image src="../../../images/ellipse-yi.png" wx:if="{{item.checked}}" class="radio-icon"></image>
+    <image src="../../../images/ellipse-wei.png" wx:else class="radio-icon"></image>
+    <radio value="{{item.group_name}}" checked="{{item.checked}}"/>{{item.group_name}}
+  </label>
+</radio-group>
+<view class="site-share">
+  <button type="primary" class="share-btn" catchtap="sure">确定</button>
+</view>

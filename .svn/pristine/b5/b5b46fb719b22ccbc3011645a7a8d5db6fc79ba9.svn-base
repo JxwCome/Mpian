@@ -1,0 +1,43 @@
+//index.js
+//获取应用实例
+var app = getApp()
+Page({
+  data:{
+    loginId: 1,
+    logo: '../../images/weixin.png',
+    userName: '用户名',
+    name: '姓名',
+    sex: '(性别)',
+    job: '职位',
+    company: '公司',
+    telephone: '手机',
+    email: '邮箱',
+    picture: '../../images/weixin.png',
+    human: 0,
+    upvote: 0,
+    collect: 0,
+    label: [
+      {
+        text:'吃货',
+        id: 1
+      },
+      {
+        text: '购物狂',
+        id: 2
+      },
+      {
+        text: '疯狂',
+        id: 1
+      },
+      {
+        text: '女汉子',
+        id: 1
+      },
+      {
+        text: '小清新',
+        id: 2
+      }
+    ],
+    dimension: '../../images/sun.png'
+  }
+})

@@ -1,0 +1,41 @@
+@import "../../wxSortPickerView/wxSortPickerView.wxss";
+.imperfect-container {
+  width: 100%;
+  margin: 0 auto;
+  height: 664rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.imperfect-container image {
+  width: 200rpx;
+  height: 150rpx;
+  margin: 224rpx 0 104rpx;
+}
+.imperfect-container text {
+  color: #999999;
+  font-size: 30rpx;
+  margin-bottom: 15rpx;
+}
+.card-group {
+  width: 690rpx;
+  margin: 0 auto;
+  height: 74rpx;
+  padding-top: 28rpx;
+  box-sizing: border-box;
+
+}
+.person {
+  color: #999;
+  text-align: center;
+  margin-top: 38rpx;
+}
+.card-group image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 22rpx;
+}
+.card-group text {
+  font-size: 30rpx;
+  color: #999;
+}

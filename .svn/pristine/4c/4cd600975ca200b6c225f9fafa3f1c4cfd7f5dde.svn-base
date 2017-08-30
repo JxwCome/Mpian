@@ -1,0 +1,53 @@
+/* her-impress.wxss */
+.sensation{
+  padding: 40rpx 30rpx;
+}
+.label{
+  overflow: hidden;
+  display: inline-block;
+  margin: 0 20rpx 20rpx 0;
+  color: #fff;
+}
+.label-text{
+  float: left;
+  color: #fff;
+  padding: 0 12rpx;
+  background: #68C49F;
+  border-bottom-left-radius: 8rpx;
+  border-top-left-radius: 8rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+}
+.label-num{
+  float: left;
+  padding: 0 12rpx;
+  background: #209C82;
+  height: 56rpx;
+  line-height: 56rpx;
+  border-top-right-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+}
+.click-view{
+  margin-top: 40rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #999;
+}
+.new-impress{
+  margin-top: 40rpx;
+  text-align: center;
+}
+.new-impress-btn{
+  width: 690rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 8rpx;
+  background: #1AAD19;
+  color: #fff;
+  font-size: 36rpx;
+}
+.new-impress-text{
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 40rpx;
+}

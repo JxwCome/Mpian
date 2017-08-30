@@ -1,0 +1,10 @@
+<form bindsubmit="submit">
+  <view class="add-tit">添加分组</view>
+  <view class="new-name">
+    <text>分组名称</text>
+    <input placeholder="请输入分组名称" name="name" value="{{name}}" />
+  </view>
+  <button type="primary" form-type="submit" class="share-btn">保存分组</button>
+</form>
+
+

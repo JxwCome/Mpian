@@ -1,0 +1,87 @@
+<!--index.wxml-->
+<!--登录没注册-->
+<block wx:if = "{{loginId == 0}}">
+  <view class="site-user">
+    <view class="user-message">
+      <image src="{{logo}}" class="mes-logo"></image>
+      <view class="mes-userName">{{userName}}</view>
+    </view>
+  </view>
+  <view class="site-material">
+    <view class="material-img">
+      <image src="../../images/text-top.png"></image> 
+    </view>
+    <view class="material-text">您还没有完善名片信息</view>
+    <view class="material-text">完善资料即可建立职场知名度哦~</view>
+    <button class="material-btn">立即完善资料</button>
+  </view>
+</block>
+<!--登录已注册-->
+<block wx:if = "{{loginId == 1}}">
+  <view class="site-info">
+    <view class="info">
+      <view class="info-name">
+        <text class="name">{{name}}</text>
+        <text class="sex">{{sex}}</text>
+        <text class="job">{{job}}</text>
+      </view>
+      <view class="info-company">
+        <image src="../../images/sun.png" class="info-icon"></image>
+        <text class="info-words">{{company}}</text>
+      </view>
+      <view class="info-telephone">
+         <image src="../../images/sun.png" class="info-icon"></image>
+         <text class="info-words">{{telephone}}</text>
+      </view>
+      <view class="info-email">
+         <image src="../../images/sun.png" class="info-icon"></image>
+         <text class="info-words">{{email}}</text>
+      </view>
+      <view class="info-picture">
+        <image src="{{picture}}" class="picture"></image>
+      </view>
+      <view class="info-dimension">
+        <image src="{{dimension}}" class="dimension"></image>
+      </view>
+    </view>
+  </view>
+  <view class="site-human">
+    <view class="human-item">
+      <image src="../../images/sun.png" class="info-icon"></image>
+      <text class="item-text">{{human}}点人气</text>
+    </view>
+    <navigator url="../praise/praise" class="human-item">
+      <image src="../../images/sun.png" class="info-icon"></image>
+      <text class="item-text">{{upvote}}人点赞</text>
+    </navigator>
+    <navigator class="human-item" url="../collect/collect">
+      <image src="../../images/sun.png" class="info-icon"></image>
+      <text class="item-text">{{collect}}人收藏</text>
+    </navigator>
+  </view>
+  <view class="site-about">
+    <navigator class="about-mine">
+      <text>关于我</text>
+      <image src="../../images/sun.png"></image>
+    </navigator>
+    <text class="about-introduce">一句话介绍一下自己，让更多的人了解你</text>
+  </view>
+  <view class="site-impress">
+    <text class="my-impress">我的印象</text>
+    <view class="impress-label label-height" wx:if = "{{label == ''}}">
+      <text class="examine">没有朋友给你添加印象</text>
+    </view>
+    <view class="impress-label" wx:else>
+      <view class="label"  wx:for = "{{label}}">
+        {{item.text}}
+        <text class="label-num">{{item.id}}</text>
+      </view>
+    </view> 
+    <navigator url="impress/impress" class="all-impress" hover-class="none">
+      <text class="examine">查看全部印象></text>
+    </navigator>
+  </view>
+  <view class="site-share">
+    <button class="share-btn" type="primary">分享我的名片</button>
+  </view>
+</block>

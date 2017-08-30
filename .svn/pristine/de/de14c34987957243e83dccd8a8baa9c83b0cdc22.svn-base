@@ -1,0 +1,55 @@
+//index.js
+//获取应用实例
+var app = getApp();
+var constract = require('../../data/data.js');
+Page({
+  data: {
+    logo: '../../images/weixin.png',
+    userName: '用户名',
+    name: '姓名',
+    sex: '(性别)',
+    job: '职位',
+    company: '公司',
+    telephone: '手机',
+    email: '邮箱',
+    picture: '',
+    v: '',
+    human: 0,
+    upvote: 0,
+    collect: 0,
+    label: [],
+    flag: true,
+    sep: true,
+    dimension: [],
+    group: '未分组'
+  },
+  onLoad: function () {
+    var that = this;
+    this.setData({
+      label: constract.label.data,
+      picture: constract.label.picture,
+      v: constract.label.v,
+      dimension: constract.label.dimension
+    })
+  },
+  praise: function(){
+    this.setData({
+      flag:false
+    })
+  },
+  praised:function(){
+    this.setData({
+      flag: true
+    })
+  },
+  collect: function () {
+    this.setData({
+      sep: false
+    })
+  },
+  collected: function () {
+    this.setData({
+      sep: true
+    })
+  }
+})

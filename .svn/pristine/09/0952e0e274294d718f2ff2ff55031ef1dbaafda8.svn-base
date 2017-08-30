@@ -1,0 +1,46 @@
+var proof = require('../../../utils/proof.js');
+Page({
+  data: {
+    flag:true,
+    mes:'获取验证码'
+  },
+  onLoad: function (options) {
+  
+  },
+  phone: function(e) {
+    console.log(e);
+    this.data.phone=e.detail.value;
+  },
+  code:function(e){
+    this.data.code = e.detail.value;
+  },
+  bindcode: function(){
+    var that=this;
+    var phone=this.data.phone;
+    if (!proof.isMobile(phone)) {
+      console.log(12);
+      wx.showModal({
+        title: '提示',
+        content: '请输入正确的手机号',
+        showCancel: false
+      });
+      return;     
+    }
+    proof.settime(that);
+  },
+  submit:function(e){
+    console.log(e.detail.value);
+    var phone = this.data.phone;
+    var code = this.data.code;
+    if (!proof.isMobile(phone)) {
+      console.log(12);
+      wx.showModal({
+        title: '提示',
+        content: '请输入正确的手机号',
+        showCancel: false
+      });
+      return;
+    };
+    wx.navigateBack();
+  }
+})

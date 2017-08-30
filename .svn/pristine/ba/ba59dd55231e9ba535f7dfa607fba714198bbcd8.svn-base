@@ -1,0 +1,98 @@
+// card-group.js
+Page({
+
+  data: {
+    list:[
+      {
+        txtStyle:'',
+        txt:'朋友',
+        num:'3',
+        id: 1
+      },
+      {
+        txtStyle: '',
+        txt: '同学',
+        num: '6',
+        id: 2
+      },
+      {
+        txtStyle: '',
+        txt: '同事',
+        num: '9',
+        id: 3
+      }
+    ]
+  },
+  onShow: function () {
+  
+  },
+  delete:function(e){
+    var that=this;
+    console.log(e);
+    var id=e.target.dataset.id;
+    console.log(id);
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除这个分组？',
+      success: function (res) {
+        var list=that.data.list;
+        if (res.confirm) {
+          for(var i=0;i<list.length;i++){
+            if(list[i].id==id){
+              list.splice(i,1);
+              
+            }
+          };
+          console.log(list);
+          that.setData({
+            list:list
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  touchstart:function(e){
+    if(e.touches.length==1){
+      this.setData({
+        startX: e.touches[0].clientX
+      })
+    }
+  },
+  touchmove: function (e) {
+    var that=this;
+    if(e.touches.length==1){
+      var moveX=e.touches[0].clientX;
+      var disX=that.data.startX - moveX;
+
+      var txtStyle='';
+      if(disX==0||disX<0){
+        txtStyle="left:0px";
+      } else if (disX > 0 && disX < 60){
+        txtStyle="left:-"+disX+"px";
+      }else{
+        txtStyle = "left:-222rpx";
+      }
+      var index=e.target.dataset.index;
+      var list=this.data.list;
+      list[index].txtStyle=txtStyle;
+      this.setData({
+        list:list
+      })
+    };
+  },
+  touchend: function (e) {
+    if(e.changedTouches.length==1){
+      var endX=e.changedTouches[0].clientX;
+      var disX=this.data.startX-endX;
+      var txtStyle = disX > 60 ?"left:-222rpx":"left:0px";
+      var index = e.target.dataset.index;
+      var list = this.data.list;
+      list[index].txtStyle = txtStyle;
+      this.setData({
+        list: list
+      }) 
+    }
+  }
+})

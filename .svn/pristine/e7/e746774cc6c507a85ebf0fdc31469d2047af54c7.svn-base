@@ -1,0 +1,4 @@
+<view class="about-container">
+  <image src="/images/weixin.png"></image>
+  <text>名名mm</text>
+</view>

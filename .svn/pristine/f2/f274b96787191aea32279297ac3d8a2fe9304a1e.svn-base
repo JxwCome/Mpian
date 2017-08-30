@@ -1,0 +1,40 @@
+//app.js
+App({
+  onLaunch: function () {
+    wx.checkSession({
+      success:function(){
+        console.log(234);
+      },
+      fail:function(){
+        console.log(666);
+      }
+    });
+    wx.login({
+      success: function (res) {
+        console.log(res);
+        wx.request({
+          url: "https://mingming.bb2bb.com/mingming/token/login",
+          data: { code: res.code },
+          success: function (res2) {
+            console.log(res2);
+            console.log(res2.data.data)
+            wx.getUserInfo({
+              success: function (res3) {
+                console.log(res3);
+                wx.request({
+                  url: "https://mingming.bb2bb.com/mingming/token/register",
+                  method: "get",
+                  data: { thirdSesson: res2.data.data, rawData: res3.rawData, signature: res3.signature, encryptedData: res3.encryptedData, iv: res3.iv },
+                  success: function (res4) {
+                    console.log(res4);
+                    console.log(res2.data.data == res4.data.data);
+                  }
+                })
+              }
+            })
+          }
+        })
+      }
+    })
+  }
+})

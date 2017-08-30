@@ -1,0 +1,44 @@
+//index.js
+//获取应用实例
+var app = getApp();
+var constract = require('../../utils/constract.js');
+Page({
+  data:{
+    erm:true,
+    show: false
+  },
+  onShow: function(){
+    var that = this;
+    wx.request({
+      url: constract.index,
+      data:{uid:1},
+      success:function(res){
+        var userInfo=res.data.data;
+        that.setData({
+          userInfo: userInfo
+        });
+      }
+    });
+  },
+  share:function(){
+    this.setData({
+      show: true
+    })
+  },
+  know:function(){
+    this.setData({
+      show: false
+    })
+  },
+  generate:function(){
+    var state = this.data.userInfo.state;
+    console.log(state);
+    wx.request({
+      url: constract.generateImg,
+      data:{uid:1,state:state},
+      success:function(res){
+        console.log(res);
+      }
+    })
+  }
+})

@@ -1,0 +1,36 @@
+page {
+  font-size: 30rpx;
+}
+.modify-container {
+  width: 690rpx;
+  margin: 0 auto;
+}
+.modify-tit {
+  color: #999;
+  width: 100%;
+  height: 82rpx;
+  border-bottom: 1rpx solid #ddd;
+  line-height: 82rpx;
+}
+.modify-item {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #ddd;
+}
+.modify-item .code {
+  width: 166rpx;
+  height: 100rpx;
+  color: #999999;
+  line-height: 100rpx;
+  text-align: center;
+}
+.modify-item input {
+  width: 372rpx;
+  margin-right: 18rpx;
+}
+.modify-ps {
+  color: #999999;
+  margin: 40rpx 0 16rpx;
+}

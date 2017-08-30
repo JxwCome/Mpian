@@ -1,0 +1,7 @@
+<template name="impress">
+  <view class="label" bindtap="tap"  wx:for = "{{label}}">
+    {{item.text}}
+    <text class="label-num">{{item.id}}</text>
+  </view>
+  <view class="click-view">点击印象,可查看谁给我添加了该印象</view>
+</template>

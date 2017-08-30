@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/card/card",
+    "pages/mine/mine",
+    "pages/index/impress/impress",
+    "pages/collect/collect",
+    "pages/edit/edit",
+    "pages/edit/edit-phone/edit-phone",
+    "pages/mine/about/about",
+    "pages/code/code",
+    "pages/details/details",
+    "pages/add-card/add-card",
+    "pages/effect/effect",
+    "pages/details/group/group",
+    "pages/card/card-group/card-group",
+    "pages/card/card-group/rename/rename",
+    "pages/mine/authentication/authentication",
+    "pages/partner/partner",
+    "pages/index/impress/new-impress/new-impress",
+    "pages/mine/news/news",
+    "pages/details/her-impress/her-impress"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "名名mm",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的名片",
+        "iconPath": "images/my-business-card-moren.png",
+        "selectedIconPath": "images/my-business-card-xuanzhong.png"
+      },
+      {
+        "pagePath": "pages/card/card",
+        "text": "名片夹",
+        "iconPath": "images/business-card-holder-moren.png",
+        "selectedIconPath": "images/business-card-holder-xuanzhong.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我",
+        "iconPath": "images/me-moren.png",
+        "selectedIconPath": "images/me-xuanzhong.png"
+      }
+    ]
+  }
+}

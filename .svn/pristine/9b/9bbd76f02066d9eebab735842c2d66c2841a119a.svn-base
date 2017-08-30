@@ -1,0 +1,10 @@
+//index.js
+//获取应用实例
+var app = getApp()
+Page({
+  data:{
+    loginId: 0,
+    logo: '../../images/weixin.png',
+    userName: '用户名'
+  }
+})

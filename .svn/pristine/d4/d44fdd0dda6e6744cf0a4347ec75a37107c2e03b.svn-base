@@ -1,0 +1,26 @@
+var constract = require('../../utils/constract.js');
+Page({
+  data: {
+    allow:false
+  },
+  onLoad: function (options) {
+    var that=this;
+    wx.request({
+      url: constract.myData,
+      data:{uid:1},
+      success:function(res){
+        console.log(res);
+        that.setData({
+          mydata:res.data.data
+        })
+      }
+    })
+    
+  },
+  onReady: function () {
+    
+  },
+  onShow: function () {
+
+  }
+})

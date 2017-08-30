@@ -1,0 +1,158 @@
+.site-info{
+  margin: 10rpx;
+  position: relative;
+  padding: 20rpx;
+  box-shadow: 0 0 20rpx rgba(0,0,0,0.1);
+}
+.info-name,.info-suggest{
+  height: 76rpx;
+  line-height: 76rpx;
+  color: #333;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.name{
+  font-size: 36rpx;
+  margin-right: 40rpx;
+}
+.sex-img{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 5rpx;
+}
+.sex{
+  margin-top: 2rpx;
+}
+.info-suggest{
+  display: flex;
+  align-items: center;
+  height: 60rpx;
+}
+.info-bottom-box {
+  height: 180rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+.info-icon{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.info-picture{
+  position: absolute;
+  right: 20rpx;
+  top: 38rpx;
+}
+.picture{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+}
+.v{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 27rpx;
+  height: 27rpx;
+}
+.info-dimension{
+  position: absolute;
+  right: 20rpx;
+  top: 280rpx;
+}
+.dimension{
+  width: 40rpx;
+  height: 40rpx;
+}
+.site-human{
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  border-bottom: 6rpx solid #f2f2f2;
+  overflow: hidden;
+}
+.human-item{
+  width: 33.33%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-text{
+  font-size: 24rpx;
+}
+.my-impress{
+  padding-left: 30rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  line-height: 70rpx;
+}
+.impress-label{
+  overflow: hidden;
+  padding: 0 30rpx;
+}
+.label-height{
+  height: 150rpx;
+  line-height: 150rpx;
+}
+navigator,.label{
+  display: inline-block;
+}
+.label{
+  float: left;
+  margin: 0 20rpx 20rpx 0;
+  color: #fff;
+}
+.label-text{
+  float: left;
+  padding: 0 12rpx;
+  background: #68C49F;
+  border-bottom-left-radius: 8rpx;
+  border-top-left-radius: 8rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+
+}
+.label-num{
+  float: left;
+  padding: 0 12rpx;
+  background: #209C82;
+  border-top-right-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+}
+.all-impress{
+  text-align: center;
+  display: block;
+  margin-bottom: 30rpx;
+}
+.examine{
+  font-size: 26rpx;
+  color: #999;
+}
+.site-about{
+  border-bottom: 6rpx solid #f2f2f2;
+}
+.about-mine,.about-introduce{
+  height: 70rpx;
+  display: block;
+  line-height: 70rpx;
+  padding: 0 30rpx;
+}
+.about-mine text{
+  font-size: 30rpx;
+}
+.about-mine image{
+  float: right;
+  margin-top: 24rpx;
+  width: 12rpx;
+  height: 22rpx;
+}
+.about-introduce{
+  color: #999;
+  line-height: 60rpx;
+  font-size: 26rpx;
+}

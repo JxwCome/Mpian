@@ -1,0 +1,22 @@
+.add-tit {
+  width: 720rpx;
+  height: 90rpx;
+  padding-top: 40rpx;
+  margin-left: 30rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+  color: #999;
+  border-bottom: 1rpx solid #ddd;
+} 
+.new-name {
+  height: 96rpx;
+  width: 720rpx;
+  margin-left: 30rpx;
+  align-items: center;
+  display: flex;
+  margin-bottom: 44rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.new-name text {
+  margin-right: 32rpx;
+}

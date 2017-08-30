@@ -1,0 +1,48 @@
+var wxSortPickerView = require('../../wxSortPickerView/wxSortPickerView.js');
+Page({
+  data: {
+    imperfect:false,
+    personList:false
+  },
+  onShow: function () {
+    var that = this;
+    var data = [
+      {
+        "collection_uid": 3,
+        "phone": "14525421525",
+        "company_name": "上海雷默",
+        "name": "王魏",
+        "avatar": "http://zmei.oss-cn-hangzhou.aliyuncs.com/webadmin/2017051116300154745.png",
+        "job_title": "java工程师"
+      },
+      {
+        "collection_uid": 3,
+        "phone": "14525421525",
+        "company_name": "上海雷默",
+        "name": "刘魏",
+        "avatar": "http://zmei.oss-cn-hangzhou.aliyuncs.com/webadmin/2017051116300154745.png",
+        "job_title": "java工程师"
+      },
+      {
+        "collection_uid": 3,
+        "phone": "14525421525",
+        "company_name": "上海雷默",
+        "name": "李魏",
+        "avatar": "http://zmei.oss-cn-hangzhou.aliyuncs.com/webadmin/2017051116300154745.png",
+        "job_title": "java工程师"
+      },
+
+    ]
+    wxSortPickerView.init(data, that);
+  },
+  call:function(e){
+    console.log(e);
+    var phone=e.target.dataset.phone;
+    wx.makePhoneCall({
+      phoneNumber: phone,
+    })
+  },
+  wxSortPickerViewItemTap: function (e) {
+    console.log(e.target.dataset.text);
+  }
+})

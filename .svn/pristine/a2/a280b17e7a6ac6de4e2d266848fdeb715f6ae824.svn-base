@@ -1,0 +1,18 @@
+.new-build {
+  width: 720rpx;
+  margin-left: 30rpx;
+  height: 83rpx;
+  border-bottom: 1rpx #ddd solid;
+  color: #006dd5;
+  display: flex;
+  align-items: center;
+}
+.new-build image{
+  width: 22rpx;
+  height: 22rpx;
+  margin-right: 24rpx;
+}
+.card-group {
+  width: 720rpx;
+  margin-left: 30rpx;
+}

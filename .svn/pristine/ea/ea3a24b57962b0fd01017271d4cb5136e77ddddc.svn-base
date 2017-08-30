@@ -1,0 +1,131 @@
+var proof = require('../../utils/proof.js');
+var constract = require('../../utils/constract.js');
+var app = getApp();
+Page({
+  data: {
+    flag: true,
+    mes: '获取验证码'
+  },
+
+  onLoad: function (options) {
+    this.setData({
+      userInfo: options,
+      avatar: options.avatar
+    })
+  },
+  phone: function (e) {
+    this.data.phone = e.detail.value;
+  },
+  code: function (e) {
+    this.data.code = e.detail.value;
+  },
+  bindcode: function () {
+    var that = this;
+    var phone = this.data.phone;
+    if (!proof.isMobile(phone)) {
+      console.log(12);
+      wx.showModal({
+        title: '提示',
+        content: '请输入正确的手机号',
+        showCancel: false
+      });
+      return;
+    };
+    wx.request({
+      url: constract.sendCode,
+      data:{phone:phone},
+      success:function(res){
+        console.log(res);
+      }
+    })
+    proof.settime(that);
+  },
+  avatar:function(){
+    var that=this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
+        var tempFilePaths = res.tempFilePaths[0];
+        that.setData({
+          avatar: tempFilePaths
+        })
+      }
+    })
+  },
+  submit: function (e) {
+    var data = e.detail.value;
+    var name = data.name;
+    var phone = data.phone;
+    var code = data.code;
+    var email = data.email;
+    var avatar = this.data.avatar;
+    console.log(avatar);
+    console.log(data);
+    if (proof.trim(name) == '') {
+      wx.showModal({
+        title: '提示',
+        content: '姓名不能为空',
+        showCancel: false
+      });
+      return;
+    };
+    if (!proof.isMobile(phone)) {
+      console.log(12);
+      wx.showModal({
+        title: '提示',
+        content: '请输入正确的手机号',
+        showCancel: false
+      });
+      return;
+    };
+    if (proof.trim(email) !== '') {
+      if (!proof.isEmail(email)) {
+        wx.showModal({
+          title: '提示',
+          content: '请输入正确的邮箱格式',
+          showCancel: false
+        });
+        return;
+      }
+    };
+    app.Verification(function (token) {
+      wx.request({
+        url: constract.add,
+        header:{token:token},
+        data:data,
+        success:function(res){
+          console.log(res);
+          if(res.data.msg=="验证码错误"){
+            wx.showModal({
+              title: '提示',
+              content: '验证码错误',
+              showCancel: false
+            });
+          }else {
+            wx.uploadFile({
+              url: constract.imgsUpdate,
+              header: { token: token },
+              filePath: avatar,
+              name: "avatar",
+              success:function(res){
+                console.log(res);
+              },
+              fail:function(res){
+                console.log(res);
+              },
+              complete:function(res){
+                console.log(res);
+                wx.navigateBack();
+              }
+            
+            })
+          }
+          
+        }
+      })
+    })
+    
+  }
+})

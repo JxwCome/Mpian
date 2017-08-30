@@ -1,0 +1,11 @@
+<view class="nobody" wx:if="{{!collect.length}}">
+  <image src='{{flag?"../../images/shoucang.png":"../../images/dianzan.png"}}' class="thumb"></image>
+  <text class="nobody-text">{{flag?"还没有人收藏哦":"还没有人点赞哦"}}</text>
+  <text class="nobody-text"></text>
+</view>
+<block wx:else>
+  <navigator url="../partner/partner?id={{item.id}}" class="praise-list" wx:for="{{collect}}">
+    <image src="{{item.avatar}}" class="list-img"></image>
+    <text class="list-text">{{item.name}}</text>
+  </navigator>
+</block>

@@ -1,0 +1,65 @@
+var app = getApp();
+var constract = require('../../../data/data.js');
+var constract = require('../../../utils/constract.js');
+Page({
+  data: {
+    
+  },
+  onLoad: function (options) {
+      console.log(options);
+      var gender = options.gender;
+      var that = this;
+      app.Verification(function (token) {
+        wx.request({
+          url: constract.allMyImpression,
+          header: { token: token },
+          success: function (res) {
+            console.log(res);
+            var MyImpression = res.data.data;
+            
+            that.setData({
+              MyImpression: MyImpression
+            });
+            if (!MyImpression.length) {
+              wx.request({
+                url: constract.label,
+                header: { token: token },
+                success:function(res){
+                  that.setData({
+                    label: res.data.data,
+                    gender:gender
+                  });
+                }
+              })
+            }
+          }
+        });
+      });
+      this.setData({
+        labelTypeMan: constract.impress.labelTypeMan,
+        labelTypeWoman: constract.impress.labelTypeWoman
+      })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+  check: function(res){
+    console.log(res);
+    var that = this;
+    var items = this.data.labelTypeWoman;
+    
+    for(var i = 0; i < items.length; i++){
+      
+    }
+  },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  }
+})

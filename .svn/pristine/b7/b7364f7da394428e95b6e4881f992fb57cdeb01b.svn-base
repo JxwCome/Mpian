@@ -1,0 +1,13 @@
+<!--new-impress.wxml-->
+<form bindsubmit="submit">
+  <view class="add-impress">
+    <view class="add-impress-title">添加印象</view>
+    <view class="add-impress-content">
+      <label class="content-label">新建印象</label>
+      <input placeholder="请输入印象" class="content-input" maxlength="10" name="impression_name"/>
+    </view>
+  </view>
+  <button class="confirm" type="primary" form-type="submit">确定</button>
+  <view class="example">例如：宅、有才华、高手等</view>
+
+</form>

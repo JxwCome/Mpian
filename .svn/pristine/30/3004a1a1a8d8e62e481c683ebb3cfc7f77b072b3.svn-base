@@ -1,0 +1,67 @@
+//index.js
+//获取应用实例
+var app = getApp();
+var constract = require('../../data/data.js');
+Page({
+  data:{
+    loginId: 1,
+    logo: '../../images/man.png',
+    userName: '用户名',
+    name: '张三',
+    sex: '男',
+    job: '文案编辑',
+    company: '上海由客网络科技有限公司',
+    telephone: '18790331252',
+    email: '392819256@qq.com',
+    picture: '',
+    human: 0,
+    upvote: 0,
+    collect: 0,
+    label: [],
+    dimension: [],
+    show: false
+  },
+  onLoad: function(){
+    var that = this;
+    this.setData({
+      label: constract.label.data,
+      picture: constract.label.picture,
+      dimension: constract.label.dimension
+    });
+    wx.login({
+      success: function (res) {
+        console.log(res);
+        wx.request({
+          url: "https://mingming.bb2bb.com/mingming/token/login",
+          data: { code: res.code },
+          success: function (res2) {
+            console.log(res2);
+            wx.getUserInfo({
+              success: function (res3) {
+                wx.request({
+                  url: "https://mingming.bb2bb.com/mingming/token/register",
+                  method:"POST",
+                  data: { thirdSesson: res2.data.data, rawData: res3.rawData, signature: res3.signature, encryptedData: res3.encryptedData, iv: res3.iv},
+                  success: function (res4) {
+                    console.log(res4);
+                  }
+                })
+              }
+            })
+          }
+        })
+
+      }
+    })
+  },
+  share:function(){
+    this.setData({
+      show: true
+    })
+  },
+  know:function(){
+    this.setData({
+      show: false
+    })
+  }
+})

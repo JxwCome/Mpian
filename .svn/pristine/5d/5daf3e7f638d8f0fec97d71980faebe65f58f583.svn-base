@@ -1,0 +1,10 @@
+<view class="nobody" wx:if="{{allow == 0}}">
+  <image src="../../images/collect.png" class="thumb"></image>
+  <text class="nobody-text">还没有人收藏哦</text>
+</view>
+<block wx:else>
+  <navigator url="../details/details" class="praise-list" wx:for="{{collect}}">
+    <image src="{{item.img}}" class="list-img"></image>
+    <text class="list-text">{{item.name}}</text>
+  </navigator>
+</block>

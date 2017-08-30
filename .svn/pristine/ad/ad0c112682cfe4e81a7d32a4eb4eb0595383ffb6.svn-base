@@ -1,0 +1,184 @@
+/**index.wxss**/
+.site-user{
+  background: #EFEFF4;
+  height: 360rpx;
+  width: 100%;
+  overflow: hidden;
+}
+.user-message{
+  background: #fff;
+  height: 280rpx;
+  margin: 10rpx;
+  text-align: center;
+  padding-top: 60rpx;
+}
+.mes-logo{
+  width: 120rpx;
+  height: 120rpx;
+}
+.mes-userName{
+  margin-top: 30rpx;
+  font-size: 38rpx;
+  color: #000;
+}
+.site-material{
+  text-align: center;
+}
+.material-img{
+  margin-top: 140rpx;
+  width: 100%;
+}
+.material-img image{
+  width: 80rpx;
+  height: 104rpx;
+}
+.material-text{
+  margin-top: 60rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.material-btn{
+  width: 690rpx;
+  margin-top: 90rpx;
+  background: #09BB07;
+  color: #fff;
+}
+.site-info{
+  background: #F2F2F2;
+  overflow: hidden;
+}
+.info{
+  margin: 10rpx;
+  position: relative;
+  padding: 20rpx;
+  background: #fff;
+}
+.info-name,.info-company,.info-telephone,.info-email{
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #000;
+}
+.info-icon{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.info-words{
+  font-size: 30rpx;
+}
+.name,.sex,.job{
+  font-size: 36rpx;
+  margin-right: 40rpx;
+}
+.sex,.job{
+  font-size: 28rpx;
+}
+.info-picture{
+  position: absolute;
+  right: 20rpx;
+  top: 38rpx;
+}
+.picture{
+  width: 120rpx;
+  height: 120rpx;
+}
+.info-dimension{
+  position: absolute;
+  right: 20rpx;
+  bottom: 30rpx;
+}
+.dimension{
+  width: 40rpx;
+  height: 40rpx;
+}
+.site-human{
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  border-bottom: 10rpx solid #f2f2f2;
+  overflow: hidden;
+}
+.human-item{
+  width: 33.33%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-text{
+  font-size: 24rpx;
+}
+.site-about{
+  border-bottom: 10rpx solid #f2f2f2;
+}
+.about-mine,.about-introduce{
+  height: 70rpx;
+  display: block;
+  line-height: 70rpx;
+  padding-left: 20rpx;
+}
+.about-mine text{
+  font-size: 28rpx;
+}
+.about-mine image{
+  float: right;
+  margin: 24rpx 20rpx 0 0;
+  width: 12rpx;
+  height: 22rpx;
+}
+.about-introduce{
+  color: #999;
+  line-height: 60rpx;
+  font-size: 25rpx;
+}
+.site-impress{
+  width: 100%;
+  border-bottom: 10rpx solid #f2f2f2;
+}
+.my-impress{
+  padding-left: 20rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  line-height: 70rpx;
+}
+.impress-label{
+  overflow: hidden;
+  padding: 0 20rpx;
+}
+.label-height{
+  height: 150rpx;
+  line-height: 150rpx;
+}
+navigator,.label{
+  display: inline-block;
+}
+.label{
+  background: #68C39F;
+  font-size: 28rpx;
+  line-height: 46rpx;
+  border-radius: 8rpx;
+  color: #fff;
+  position: relative;
+  padding: 5rpx 50rpx 5rpx 10rpx;
+  margin: 0 20rpx 20rpx 0;
+}
+.label-num{
+  width: 40rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 55rpx;
+  background: #209C83;
+  text-align: center;
+  line-height: 55rpx;
+  border-bottom-right-radius: 8rpx;
+  border-top-right-radius: 8rpx;
+}
+.all-impress{
+  text-align: center;
+  display: block;
+  margin-bottom: 30rpx;
+}
+.examine{
+  font-size: 26rpx;
+  color: #999;
+}

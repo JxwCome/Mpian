@@ -1,0 +1,26 @@
+Page({
+  data: {
+    allow: false,
+    kao: "kao",
+    painting: '../../images/weixin.png',
+    name: '姓名',
+    dimension: '../../images/weixin.png'
+  },
+  onLoad: function (options) {
+    console.log(options);
+    wx.request({
+      url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET',
+      data: { grant_type: "client_credential",
+              appid: "wx299f724e876813e4",
+              secret: "5ce5199a783e9663c2b67283ec440232"
+            },
+      success:function(res){
+        console.log(res);
+        wx.request({
+          url: '',
+        })
+      }
+      
+    })
+  }
+})

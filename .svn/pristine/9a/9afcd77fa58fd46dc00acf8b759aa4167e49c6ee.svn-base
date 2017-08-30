@@ -1,0 +1,36 @@
+// rename.js
+Page({
+  data: {
+    
+  },
+
+  onLoad: function (options) {
+    console.log(options);
+    if (!options.name){
+      wx.setNavigationBarTitle({
+        title: '新建分组'
+      })
+      console.log("空");
+      return;
+    }
+    var name = options.name;
+    this.setData({
+      name:name
+    })
+  },
+  submit:function(e){
+    console.log(e);
+    if(e.detail.value.name==''){
+      wx.showModal({
+        title: '提示',
+        content: '分组名称不能为空!',
+        showCancel:false
+      });
+      return;
+    }
+    if(this.data.name){
+      console.log("有");
+    }
+    wx.navigateBack();
+  }
+})

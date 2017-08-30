@@ -1,0 +1,39 @@
+var constract = require('../../utils/constract.js');
+var app = getApp();
+Page({
+  data: {
+    erm:false
+  },
+  onLoad: function (options) {
+    var that=this;
+    console.log(options);
+    var id = options.id;
+    wx.request({
+      url: constract.popilarity,
+      data: { uid: id},
+      success:function(res){
+        console.log(res);
+      }
+    });
+    app.Verification(function (token) {
+      wx.request({
+        url: constract.other,
+        header:{token:token},
+        data: { passiveUid: id},
+        success: function (res) {
+          console.log(res);
+          if (!res.data.data.state) {
+            wx.switchTab({
+              url: '/pages/index/index'
+            })
+            return;
+          }
+          that.setData({
+            userInfo: res.data.data
+          })
+        }
+      })
+    })
+    
+  }
+})

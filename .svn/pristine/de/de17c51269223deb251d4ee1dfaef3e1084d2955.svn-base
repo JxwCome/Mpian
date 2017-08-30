@@ -1,0 +1,40 @@
+<form bindsubmit="submit">
+  <view class="edit-header">
+    <view class="edit-must">
+      <image src="{{avatar}}" bindtap="avatar"></image>
+      <view class="edit-must-info">
+        <view class="edit-must-name">
+          <text class="xing">*</text>
+          <text>姓名：</text>
+          <input name="name" maxlength="12" value="{{userInfo.name}}" />
+        </view>
+        <view class="edit-must-phone">
+          <text class="xing">*</text>
+          <text>手机：</text>
+          <text class="phone">{{userInfo.phone}}</text>
+          <navigator url="edit-phone/edit-phone" hover-class="none" class="modify">修改</navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="edit-body">
+    <view class="edit-input-item">
+      <text class="">邮 箱： </text>
+      <input name="email" placeholder="常用邮箱" value="{{userInfo.email}}" />
+    </view>
+    <view class="edit-input-item">
+      <text class="">公 司： </text>
+      <input name="company_name" placeholder="您的公司" value="{{userInfo.company_name}}" />
+    </view>
+    <view class="edit-input-item">
+      <text class="">职 位： </text>
+      <input name="job_title" placeholder="您的职位" value="{{userInfo.job_title}}" />
+    </view>
+    <view class="edit-input-item introduction">
+      <text class="">简 介： </text>
+      <textarea name="introduction" maxlength="140" value="{{userInfo.introduction}}" bindinput="bindinput" placeholder="一句话介绍下自己吧，让更多的人了解你" />
+      <text class="worders">{{num}}/140</text>
+    </view>
+    <button class="share-btn" type="primary" form-type="submit">保存</button>
+  </view>
+</form>

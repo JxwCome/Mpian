@@ -1,0 +1,25 @@
+<!--全部印象-->
+<block wx:if="{{!MyImpression.length}}">
+  <view class="people-sex" wx:if = "{{gender==1}}">
+    <image src="../../../images/man1.png" class="sex-icon"></image>
+    <text class="sex-text-man">我是男生</text>
+  </view>
+  <view class="people-sex" wx:if = "{{gender==2}}">
+    <image src="../../../images/woman1.png" class="sex-icon"></image>
+    <text class="sex-text-woman">我是女生</text>
+  </view>
+  <view class="people-label">
+      <text wx:for = "{{label}}" bindtap="check" data-index="{{index}}" class="{{item.checked?'label-typed':'label-type'}}">{{item.name}}</text>
+  </view>
+  <view class="site-share">
+    <text class="share-text">最多选择5个印象</text>
+    <button type="primary" bindtap="save" class="share-btn">保存信息</button>
+  </view>
+</block>
+<view wx:if = "{{MyImpression.length}}" class="sensation">
+  <navigator url="../../collect/collect?type=3" class="label"  wx:for = "{{MyImpression}}">
+    <text class="label-text">{{item.impression_name}}</text>
+    <text class="label-num">{{item.num}}</text>
+  </navigator>
+</view>
+<view class="click-view">点击印象,可查看谁给我添加了该印象</view>

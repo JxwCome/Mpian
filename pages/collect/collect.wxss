@@ -1,0 +1,33 @@
+.nobody{
+  padding-top: 200rpx;
+  text-align: center;
+}
+.thumb{
+  width: 192rpx;
+  height: 192rpx;
+}
+.nobody-text{
+  margin-top: 140rpx;
+  display: block;
+  font-size: 30rpx;
+  color: #999;
+}
+.praise-list{
+  height: 120rpx;
+  line-height: 120rpx;
+  padding-left: 30rpx;
+  border-bottom: 1rpx solid #DDDDDD;
+  display: flex;
+  align-items: center;
+}
+.list-img{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 30rpx;
+  border-radius: 8rpx;
+}
+.list-text{
+  display: block;
+  max-width: 400rpx;
+  overflow: hidden;
+}

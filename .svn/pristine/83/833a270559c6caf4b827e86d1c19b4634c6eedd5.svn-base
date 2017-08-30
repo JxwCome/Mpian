@@ -1,0 +1,34 @@
+/* new-impress.wxss */
+.add-impress{
+  margin-left: 30rpx;
+  display: block;
+}
+.add-impress-title{
+  font-size: 26rpx;
+  color: #999;
+  padding: 40rpx 0 24rpx 0;
+  border-bottom: 1rpx solid #ddd;
+}
+.add-impress-content{
+  height: 96rpx;
+  border-bottom: 1rpx solid #ddd;
+  display: flex;
+  align-items: center;
+}
+.content-label{
+  color: #333;
+  float: left;
+  margin-right: 32rpx;
+}
+.content-input{
+  width: 500rpx;
+}
+.confirm{
+  width: 690rpx;
+  margin: 74rpx 0 52rpx 30rpx;
+}
+.example{
+  font-size: 26rpx;
+  color: #999;
+  text-align: center;
+}

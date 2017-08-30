@@ -1,0 +1,221 @@
+/**index.wxss**/
+.site-user{
+  background: #EFEFF4;
+  height: 360rpx;
+  width: 100%;
+  overflow: hidden;
+}
+.user-message{
+  background: #fff;
+  height: 280rpx;
+  margin: 10rpx;
+  text-align: center;
+  padding-top: 60rpx;
+}
+.mes-logo{
+  width: 120rpx;
+  height: 120rpx;
+}
+.mes-userName{
+  margin-top: 30rpx;
+  font-size: 38rpx;
+  color: #000;
+}
+.site-material{
+  text-align: center;
+}
+.material-img{
+  margin-top: 140rpx;
+  width: 100%;
+}
+.material-img image{
+  width: 80rpx;
+  height: 104rpx;
+}
+.material-text{
+  margin-top: 60rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.material-btn{
+  width: 690rpx;
+  margin-top: 90rpx;
+  background: #09BB07;
+  color: #fff;
+}
+.site-info{
+  overflow: hidden;
+}
+.info{
+  margin: 10rpx;
+  position: relative;
+  padding: 20rpx;
+  box-shadow: 0 0 20rpx rgba(0,0,0,0.1);
+}
+.info-name,.info-job,.info-company,.info-telephone,.info-email{
+  margin-bottom: 30rpx;
+  color: #333;
+}
+.info-name{
+  margin-top: 20rpx;
+}
+.info-job{
+  margin-bottom: 68rpx;
+}
+.info-icon{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.info-words{
+  font-size: 30rpx;
+}
+.name,.sex,.job{
+  font-size: 36rpx;
+  margin-right: 40rpx;
+  color: #333;
+}
+.sex,.job{
+  font-size: 30rpx;
+}
+.info-picture{
+  position: absolute;
+  right: 20rpx;
+  top: 38rpx;
+}
+.picture{
+  width: 120rpx;
+  height: 120rpx;
+}
+.info-dimension{
+  position: absolute;
+  right: 20rpx;
+  top: 320rpx;
+}
+.dimension{
+  width: 40rpx;
+  height: 40rpx;
+}
+.site-human{
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  border-bottom: 6rpx solid #f2f2f2;
+  overflow: hidden;
+}
+.human-item{
+  width: 33.33%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-text{
+  font-size: 24rpx;
+}
+.site-about{
+  border-bottom: 6rpx solid #f2f2f2;
+}
+.about-mine,.about-introduce{
+  height: 70rpx;
+  display: block;
+  line-height: 70rpx;
+  padding: 0 30rpx;
+}
+.about-mine text{
+  font-size: 30rpx;
+}
+.about-mine image{
+  float: right;
+  margin-top: 24rpx;
+  width: 12rpx;
+  height: 22rpx;
+}
+.about-introduce{
+  color: #999;
+  line-height: 60rpx;
+  font-size: 26rpx;
+}
+.site-impress{
+  width: 100%;
+  border-bottom: 6rpx solid #f2f2f2;
+}
+.my-impress{
+  padding-left: 30rpx;
+  height: 70rpx;
+  font-size: 30rpx;
+  line-height: 70rpx;
+}
+.impress-label{
+  overflow: hidden;
+  padding: 0 30rpx;
+}
+.label-height{
+  height: 150rpx;
+  line-height: 150rpx;
+}
+navigator,.label{
+  display: inline-block;
+}
+.label{
+  float: left;
+  margin: 0 20rpx 20rpx 0;
+}
+.label-text{
+  float: left;
+  font-size: 28rpx;
+  color: #fff;
+  padding: 12rpx;
+  background: #68C49F;
+  border-bottom-left-radius: 8rpx;
+  border-top-left-radius: 8rpx;
+}
+.label-num{
+  float: left;
+  padding: 12rpx;
+  background: #209C82;
+  font-size: 28rpx;
+  color: #fff;
+  border-top-right-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+}
+.all-impress{
+  text-align: center;
+  display: block;
+  margin-bottom: 30rpx;
+}
+.examine{
+  font-size: 26rpx;
+  color: #999;
+}
+.site-module{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6)
+}
+.mod-img{
+  position: absolute;
+  right: 70rpx;
+  top: 0;
+  width: 80rpx;
+  height: 80rpx;
+}
+.mod-text{
+  color: #fff;
+  position: absolute;
+  top: 100rpx;
+  right: 40rpx;
+}
+.mod-btn{
+  position: absolute;
+  width: 690rpx;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.show{
+  display: block;
+}

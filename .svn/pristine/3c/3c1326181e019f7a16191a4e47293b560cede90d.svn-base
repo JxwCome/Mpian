@@ -1,0 +1,12 @@
+<!--her-impress.wxml-->
+<view class="sensation">
+  <view class="label"  wx:for = "{{labelElse}}">
+    <text class="label-text">{{item.text}}</text>
+    <text class="label-num">{{item.id}}</text>
+  </view>
+  <view class="click-view">点击印象,评价您心中的好友印象</view>
+  <view class="new-impress">
+    <navigator type="primary" url="../../index/impress/new-impress/new-impress" class="new-impress-btn">添加新的印象</navigator>
+    <view class="new-impress-text">上面的印象不合适? 添加一个试试</view>
+  </view>
+</view>

@@ -1,0 +1,13 @@
+// authentication.js
+Page({
+  data: {
+    flag:false
+  },
+
+  onLoad: function (options) {
+  
+  },
+  upload: function() {
+    
+  }
+})

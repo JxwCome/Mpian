@@ -1,0 +1,37 @@
+<view class="container" wx:if="{{flag}}">
+  <view class="authentication-tit">选择一下任一材料，证明你的职业身份</view>
+  <view class="authentication-body">
+    <view class="upload-item-box">
+      <view class="upload-item" catchtap="upload">
+        <text>名片</text>
+        <image src="/images/weixin.png" class="mingpian"></image>
+      </view>
+      <view class="level">一级认证</view>
+    </view>
+     <view class="upload-item-box">
+      <view class="upload-item" catchtap="upload">
+        <text>工牌</text>
+        <image src="/images/weixin.png" class="mingpian"></image>
+      </view>
+      <view class="level">一级认证</view>
+    </view>
+     <view class="upload-item-box">
+      <view class="upload-item" catchtap="upload">
+        <text>在职证明</text>
+        <image src="/images/weixin.png" class="mingpian"></image>
+      </view>
+      <view class="level">一级认证</view>
+    </view>
+     <view class="upload-item-box">
+      <view class="upload-item" catchtap="upload">
+        <text>身份证</text>
+        <image src="/images/weixin.png" class="mingpian"></image>
+      </view>
+      <view class="level">二级认证</view>
+    </view>
+  </view> 
+  <view class="authentication-ps">认证后将点亮V图标，获得优质人脉的关注</view>
+</view>
+<view class="upload-container" wx:else>
+  <image src="/images/weixin.png"></image>
+</view>

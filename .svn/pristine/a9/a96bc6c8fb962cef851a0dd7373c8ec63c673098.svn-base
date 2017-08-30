@@ -1,0 +1,43 @@
+//app.js
+App({
+  onLaunch: function () {
+    wx.removeStorageSync("token");
+  },
+  Verification:function(dl){
+    var token = wx.getStorageSync('token');
+    if (token) {
+      typeof dl == "function" && dl(token);
+      return;
+    }
+    wx.login({
+      success: function (res) {
+        wx.request({
+          url: "https://mingming.bb2bb.com/mingming/token/login",
+          data: { code: res.code },
+          success: function (res2) {
+            wx.getUserInfo({
+              success: function (res3) {
+                wx.request({
+                  url: "https://mingming.bb2bb.com/mingming/token/register",
+                  method: "get",
+                  data: { thirdSesson: res2.data.data, rawData: res3.rawData, signature: res3.signature, encryptedData: res3.encryptedData, iv: res3.iv },
+                  success: function (res4) {
+                    console.log(res4);
+                    token = res4.data.data;
+                    wx.setStorageSync('token',token);
+                    typeof dl == "function" && dl(token);
+                  }
+                })
+              },
+              fail: function (res5) {
+                token = res2.data.data;
+                wx.setStorageSync('token', token);
+                typeof dl == "function" && dl(token);
+              }
+            })
+          }
+        })
+      }
+    })
+  }
+})

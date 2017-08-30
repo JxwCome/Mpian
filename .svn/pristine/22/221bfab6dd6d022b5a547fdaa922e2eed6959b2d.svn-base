@@ -1,0 +1,18 @@
+<navigator hover-class="none" url="rename/rename" class="new-build">
+  <image src="/images/add.png"></image>
+  <text>新建分组</text>
+</navigator>
+<block wx:for="{{list}}">
+  <view class="card-group" >
+    <view class="group-down">
+      <navigator hover-class="none" class="rename" url="rename/rename?name={{item.txt}}&id={{item.id}}">改名</navigator>
+      <view class="delete" catchtap="delete" data-id="{{item.id}}">删除</view>
+    </view>
+    <navigator url="/pages/collect/collect" style="{{item.txtStyle}}" data-index="{{index}}" hover-class="none" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" class="group-up">
+      <text>{{item.txt}}</text>
+      <image src="/images/back.png"></image>
+      <text class="number">{{item.num}}</text>
+    </navigator>
+  </view>
+</block>
+<view class="remind">提醒：分组左划可进行编辑或删除</view>

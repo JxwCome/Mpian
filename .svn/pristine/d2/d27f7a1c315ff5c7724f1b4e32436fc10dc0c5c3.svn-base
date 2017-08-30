@@ -1,0 +1,6 @@
+<view class="my-dimension">
+  <image src="{{avatar}}" class="my-painting"></image>
+  <view class="my-name">{{name}}</view>
+  <image src="{{dimension}}" class="dimension"></image>
+  <view class="scan">扫描二维码添加我的名片</view>
+</view>

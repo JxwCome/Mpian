@@ -1,0 +1,7 @@
+<view class="new-build">
+  <image src="/images/weixin.png"></image>
+  <text>新建分组</text>
+</view>
+<view class="card-group">
+  
+</view>

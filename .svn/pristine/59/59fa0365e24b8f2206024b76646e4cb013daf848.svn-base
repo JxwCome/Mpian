@@ -1,0 +1,63 @@
+<form bindsubmit="submit">
+  <view class="edit-header">
+    <view class="edit-must">
+      <image src="{{avatar}}" mode="aspectFit" bindtap="avatar"></image>
+      <view class="edit-must-info">
+        <view class="edit-must-name">
+          <text class="xing">*</text>
+          <text>姓名：</text>
+          <input name="name" value="{{userInfo.name}}" maxlength="12" placeholder="您的姓名"/>
+        </view>
+        <view class="edit-must-phone">
+          <text class="xing">*</text>
+          <text>性别：</text>
+          <radio-group name="gender" bindchange="sex">
+            <label class="woman">
+              <!--<image src=" {{sex==1?'../../images/ellipse-wei.png':'../../images/ellipse-yi.png'}}"></image>-->
+              <image src="../../images/ellipse-wei.png" class="{{seximg?'iosimg':''}}" hidden="{{sex==2}}"></image>
+              <image src="../../images/ellipse-yi.png" class="{{seximg?'iosimg':''}}" hidden="{{sex==1}}"></image>
+              <radio value="2"  checked /> 女
+            </label>
+            <label class="man">
+              <!--<image src=" {{sex==2?'../../images/ellipse-wei.png':'../../images/ellipse-yi.png'}}"></image>-->
+              <image src="../../images/ellipse-wei.png" class="{{seximg?'iosimg':''}}" hidden="{{sex==1}}"></image>
+              <image src="../../images/ellipse-yi.png" class="{{seximg?'iosimg':''}}" hidden="{{sex==2}}"></image>
+              <radio value="1"/> 男
+            </label>
+          </radio-group>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="edit-body">
+    <view class="edit-input-item">
+      
+      <text class="spacing"><text class="xing">*</text>手机：</text>
+      <input type="number" maxlength="11" name="phone" placeholder="常用手机号" bindinput="phone" />
+     
+    </view>
+    <view class="edit-input-item">
+      <text class="spacing">验证码：</text>
+      <input name="code" placeholder="请输入验证码" bindblur="code" />
+      <view class="code"  bindtap="{{flag? 'bindcode':''}}" >{{mes}}</view>
+    </view>
+    <view class="edit-input-item">
+      <text class="spacing">邮箱：</text>
+      <input name="email" placeholder="常用邮箱" />
+    </view>
+    <view class="edit-input-item">
+      <text class="spacing">公司：</text>
+      <input name="company_name" maxlength="40" placeholder="您的公司" />
+    </view>
+    <view class="edit-input-item">
+      <text class="spacing">职位：</text>
+      <input name="job_title" maxlength="30" placeholder="您的职位" />
+    </view>
+    <view class="edit-input-item introduction">
+      <text class="spacing">简介:</text>
+      <textarea name="introduction" maxlength="140" class="{{flag?'text-ios':''}}" bindinput="bindinput" placeholder="一句话介绍下自己吧，让更多的人了解你" />
+      <text class="worders">{{num}}/140</text>
+    </view>
+    <button class="share-btn" type="primary" form-type="submit">保存信息</button>
+  </view>
+</form>

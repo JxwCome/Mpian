@@ -1,0 +1,92 @@
+var constract = require('../../../utils/constract.js');
+var app = getApp();
+Page({
+  data: {
+    flag:true
+  },
+
+  onLoad: function (options) {
+    var that=this;
+    console.log(12);
+    console.log(options.perstate);
+    if (options.perstate!=1){
+      return;
+    };
+    app.Verification(function (token) {
+      wx.request({
+        url: constract.userCertification,
+        header: { token: token },
+        success: function (res) {
+          console.log(res);
+          var user=res.data.data;
+          if (!user) {
+            user = { state: options.state};
+          }
+          that.setData({
+            user:user,
+          })
+        }
+      })
+    })
+  },
+  upload: function(e) {
+    console.log(e);
+    var that=this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: function(res) {
+        console.log(res);
+        var tempFilePaths = res.tempFilePaths[0];
+        var type = e.currentTarget.dataset.type;
+        var user = that.data.user;
+        user.img = tempFilePaths;
+        user.type = type;
+        console.log(type);
+        that.setData({
+          user:user,
+          flag:false
+        })
+
+      }
+    })
+  },
+  submit:function(){
+    var that=this;
+    var type=this.data.user.type;
+    var img = this.data.user.img;
+    console.log(img);
+    app.Verification(function (token) {
+      wx.uploadFile({
+        url: constract.certification,
+        header: { token: token },
+        filePath: img,
+        name: "img",
+        formData: { type: type },
+        success: function (res) {
+          console.log(res);
+          wx.request({
+            url: constract.userCertification,
+            header: { token: token },
+            success: function (res) {
+              console.log(res);
+              that.setData({
+                user: res.data.data
+              })
+            }
+          })
+        }
+      })
+      
+    }) 
+  },
+  resubmit:function(){
+    var user=this.data.user;
+    user.state=0;
+    this.setData({
+      user:user,
+      flag:true
+    })
+  }
+})

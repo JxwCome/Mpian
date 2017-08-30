@@ -1,0 +1,12 @@
+.about-container {
+  width: 690rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-container image {
+  width: 152rpx;
+  height: 152rpx;
+  border-radius: 50%;
+}

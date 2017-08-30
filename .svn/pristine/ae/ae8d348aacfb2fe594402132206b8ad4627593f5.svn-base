@@ -1,0 +1,141 @@
+var app = getApp();
+var constract = require('../../utils/constract.js');
+var app = getApp();
+Page({
+  data: {
+    erm:false
+  },
+  onLoad: function (options) {
+    var that=this;
+    console.log(options);
+    var id = options.id;
+    wx.request({
+      url: constract.popilarity,
+      data: { uid: id},
+      success:function(res){
+        console.log(res);
+      }
+    });
+    app.Verification(function (token) {
+      wx.request({
+        url: constract.other,
+        header:{token:token},
+        data: { passiveUid: id},
+        success: function (res) {
+          console.log(res);
+          if (!res.data.data.state) {
+            wx.switchTab({
+              url: '/pages/index/index'
+            })
+            return;
+          }
+          that.setData({
+            userInfo: res.data.data
+          })
+        }
+      })
+    })
+  },
+  praise: function () {
+    var that = this;
+    var id = this.data.userInfo.id;
+    app.Verification(function (token) {
+      wx.request({
+        url: constract.likeAddOrEdit,
+        header: { token: token },
+        data: { like_uid: id },
+        success: function (res) {
+          console.log(res);
+          wx.request({
+            url: constract.other,
+            header: { token: token },
+            data: { passiveUid: id },
+            success: function (res) {
+              console.log(res);
+              that.setData({
+                userInfo: res.data.data
+              })
+
+            }
+          })
+        }
+      })
+    })
+  },
+  praised: function () {
+    var that = this;
+    var id = this.data.userInfo.id;
+    app.Verification(function (token) {
+      wx.request({
+        url: constract.likeAddOrEdit,
+        header: { token: token },
+        data: { like_uid: id },
+        success: function (res) {
+          console.log(res);
+          wx.request({
+            url: constract.other,
+            header: { token: token },
+            data: { passiveUid: id },
+            success: function (res) {
+              console.log(res);
+              that.setData({
+                userInfo: res.data.data,
+                flag: true
+              })
+
+            }
+          })
+        }
+      })
+    })
+  },
+  collect: function () {
+    var that = this;
+    var id = this.data.userInfo.id;
+    app.Verification(function (token) {
+      wx.request({
+        url: constract.collectionAddOrEdit,
+        header: { token: token },
+        data: { collection_uid: id },
+        success: function (res) {
+          wx.request({
+            url: constract.other,
+            header: { token: token },
+            data: { passiveUid: id },
+            success: function (res) {
+              console.log(res);
+              that.setData({
+                userInfo: res.data.data
+              })
+            }
+          })
+        }
+      })
+    })
+  },
+  collected: function () {
+    var that = this;
+    var id = this.data.userInfo.id;
+    app.Verification(function (token) {
+      wx.request({
+        url: constract.collectionAddOrEdit,
+        header: { token: token },
+        data: { collection_uid: id },
+        success: function (res) {
+          wx.request({
+            url: constract.other,
+            header: { token: token },
+            data: { passiveUid: id },
+            success: function (res) {
+              console.log(res);
+              that.setData({
+                userInfo: res.data.data,
+                sep: true
+              })
+            }
+          })
+        }
+      })
+    })
+  }
+})

@@ -1,0 +1,11 @@
+<view class="sensation">
+  <view class="label"  wx:for = "{{label}}">
+    {{item.text}}
+    <text class="label-num">{{item.id}}</text>
+  </view>
+</view>
+<view class="click-view">点击印象,评价你心中的好友印象</view>
+<view class="site-share">
+    <button class="share-btn" type="primary">分享我的名片</button>
+    <view class="share-add">上面的印象不合适？添加一个试试</view>
+  </view>

@@ -1,0 +1,94 @@
+
+.edit-header {
+  width: 100%;
+  height: 200rpx;
+  background-color: #f7f7f8; 
+}
+.edit-must {
+  width: 690rpx;
+  height: 200rpx;
+  margin: 0 auto;
+  display: flex; 
+  justify-content: space-between;
+}
+.edit-must image {
+  width: 120rpx;
+  height: 120rpx;
+  margin-top: 36rpx;
+}
+.edit-must-info {
+  width: 556rpx;
+  margin-top: 30rpx;
+}
+.edit-must-info .xing {
+  color: red;
+  margin-right: 16rpx;
+
+}
+.edit-must-name {
+  width: 100%;
+  height: 66rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1rpx solid #ddd;
+}
+.edit-must-name input {
+  width: 270rpx;
+}
+.edit-must-phone {
+  width: 100%;
+  height: 86rpx;
+  line-height: 86rpx;
+  position: relative;
+}
+.edit-must-phone .phone {
+  color: #999;
+}
+.edit-must-phone .modify {
+  width: 114rpx;
+  height: 86rpx;
+  color: #09bb07;
+  line-height: 86rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-left: 1rpx solid #ddd;
+  text-align: center;
+}
+.edit-body {
+  width: 690rpx;
+  margin: 0 auto;
+  color: #000;
+}
+.edit-body input {
+  width: 556rpx;
+}
+.edit-input-item {
+  width: 100%;
+  height: 92rpx;
+  border-bottom: 1rpx #ddd solid;
+  display: flex;
+  align-items: center;
+}
+.introduction {
+  height: 172rpx;
+  padding-top:40rpx;
+  align-items: flex-start;
+  position: relative;
+  /*margin-bottom: 24rpx;*/
+} 
+.introduction wx-textarea {
+  width: 556rpx;
+  height: 130rpx;
+
+} 
+.text-ios {
+    margin-top: -10rpx;
+}
+.introduction .worders {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #999;
+}

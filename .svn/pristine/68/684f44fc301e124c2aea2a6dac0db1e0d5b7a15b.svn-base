@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/card/card",
+    "pages/mine/mine",
+    "pages/edit/edit"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "名名mm",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的名片",
+        "iconPath": "iconPath",
+        "selectedIconPath": "selectedIconPath"
+      },
+      {
+        "pagePath": "pages/card/card",
+        "text": "名片夹",
+        "iconPath": "iconPath",
+        "selectedIconPath": "selectedIconPath"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我",
+        "iconPath": "iconPath",
+        "selectedIconPath": "selectedIconPath"
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+//index.js
+//获取应用实例
+var app = getApp();
+var constracts = require('../../data/data.js');
+var constract = require('../../utils/constract.js');
+Page({
+  data: {
+    userInfo:[],
+    erm: false,
+    label:'',
+    group:'未分组'
+  },
+  onLoad: function (options) {
+    console.log(options);
+    var that = this;
+    var id = options.id;
+    wx.request({
+      url: constract.other,
+      data: { collection_uid: id},
+      success: function(res){
+        console.log(res);
+        var data = res.data.data;
+        that.setData({
+          userInfo: data
+        })
+      }
+    });
+    var label = constracts.label.data;
+    this.setData({
+      label: label
+    })
+  },
+  praise: function(){
+    this.setData({
+      flag:false
+    })
+  },
+  praised:function(){
+    this.setData({
+      flag: true
+    })
+  },
+  collect: function () {
+    this.setData({
+      sep: false
+    })
+  },
+  collected: function () {
+    this.setData({
+      sep: true
+    })
+  }
+})

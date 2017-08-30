@@ -1,0 +1,17 @@
+<form bindsubmit="submit">
+  <view class="modify-container">
+    <view class="modify-tit">手机认证</view>
+    <view class="modify-item">
+      <text>手机号： </text>
+      <input type="number" maxlength="11" name="phone" placeholder="请输入手机号" bindblur="phone" />
+      <view class="code"  bindtap="{{flag? 'bindcode':''}}" >{{mes}}</view>
+    </view>
+    <view class="modify-item">
+      <text>验证码： </text>
+      <input name="code" placeholder="请输入验证码" bindblur="code" />
+    </view>
+    <view class="modify-ps">认证手机可以大大提高自己的影响力</view>
+    <button type="primary" class="share-btn" form-type="submit">保存</button>
+  </view>
+</form>
+

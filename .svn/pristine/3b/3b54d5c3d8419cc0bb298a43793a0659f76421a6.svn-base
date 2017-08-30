@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<!--登录没注册-->
+<block wx:if = "{{loginId == 0}}">
+  <view class="site-user">
+    <view class="user-message">
+      <image src="{{logo}}" class="mes-logo"></image>
+      <view class="mes-userName">{{userName}}</view>
+    </view>
+  </view>
+  <view class="site-material">
+    <view class="material-img">
+      <image src="../../images/text-top.png"></image> 
+    </view>
+    <view class="material-text">您还没有完善名片信息</view>
+    <view class="material-text">完善资料即可建立职场知名度哦~</view>
+  </view>
+</block>

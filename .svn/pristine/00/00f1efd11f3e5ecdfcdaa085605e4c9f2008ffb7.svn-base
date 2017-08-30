@@ -1,0 +1,6 @@
+// about.js
+Page({
+  data: {
+  
+  }
+})

@@ -1,0 +1,32 @@
+.sensation{
+  padding: 40rpx 30rpx;
+}
+.label{
+  background: #68C39F;
+  font-size: 28rpx;
+  line-height: 46rpx;
+  border-radius: 8rpx;
+  color: #fff;
+  display: inline-block;
+  position: relative;
+  padding: 5rpx 50rpx 5rpx 10rpx;
+  margin: 0 20rpx 20rpx 0;
+}
+.label-num{
+  width: 40rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 55rpx;
+  background: #209C83;
+  text-align: center;
+  line-height: 55rpx;
+  border-bottom-right-radius: 8rpx;
+  border-top-right-radius: 8rpx;
+}
+.click-view{
+  margin-top: 40rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #999;
+}

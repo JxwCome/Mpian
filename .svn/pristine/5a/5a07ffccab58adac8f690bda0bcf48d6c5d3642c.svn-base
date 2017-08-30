@@ -1,0 +1,33 @@
+<import src="../../wxSortPickerView/wxSortPickerView.wxml"/> 
+
+
+
+
+<block wx:if="{{userInfo.state == 0}}">
+  <view class="imperfect-container">
+    <image src="../../images/mingpianjia.png"></image>
+    <text>完善资料即可建立职场知名度哦~</text>
+    <navigator hover-class="none" url="/pages/add-card/add-card?avatar={{userInfo.avatar}}&name={{userInfo.name}}">
+      <button type="primary" class="share-btn">立即完善资料</button>
+    </navigator>
+  </view>
+</block>
+<block wx:if="{{userInfo.state == 1}}">
+  <view class="imperfect-container" wx:if="{{!personList.length}}">
+    <image src="../../images/mingpianjia.png"></image>
+    <text>分享我的名片让更多人认识你</text>
+    <navigator url="/pages/index/index" open-type="switchTab" hover-class="none">
+      <button type="primary" class="share-btn">分享我的名片</button>
+    </navigator>
+  </view>
+
+  <view class="card-container" wx:else>
+    <navigator class="card-group" hover-class="none" url="card-group/card-group">
+      <image src="../../images/fenzu.png"></image>
+      <text>名片分组</text>
+    </navigator>
+    <!--首字母排序模板-->
+    <template is="wxSortPickerView" data="{{wxSortPickerData}}"/>
+    <view class="person">共有3位联系人</view>
+  </view>
+</block>

@@ -1,0 +1,70 @@
+<!--partner.wxml-->
+<view class="site-info">
+  <view class="info">
+    <view class="info-name">
+      <text class="name">{{userInfo.name}}</text>
+      <text class="sex">{{userInfo.gender==1?"男":"女"}}</text>
+    </view>
+    <view class="info-job">
+      <image src="../../images/position.png" class="info-icon"></image>
+      <text class="info-words">{{userInfo.job_title}}</text>
+    </view>
+    <view class="info-company">
+      <image src="../../images/company.png" class="info-icon"></image>
+      <text class="info-words">{{userInfo.company_name}}</text>
+    </view>
+    <view class="info-telephone">
+        <image src="../../images/call.png" class="info-icon"></image>
+        <text class="info-words">{{userInfo.phone}}</text>
+    </view>
+    <view class="info-email">
+        <image src="../../images/mail.png" class="info-icon"></image>
+        <text class="info-words">{{userInfo.email}}</text>
+    </view>
+    <view class="info-picture">
+      <image src="{{userInfo.avatar}}" class="picture"></image>
+    </view>
+  </view>
+</view>
+<view class="site-human">
+  <view class="human-item">
+    <image src="../../images/renqi.png" class="info-icon"></image>
+    <text class="item-text">{{userInfo.popularity}}点人气</text>
+  </view>
+  <navigator url="../praise/praise" class="human-item" hover-class="none">
+    <image src="../../images/praise.png" class="info-icon"></image>
+    <text class="item-text">{{userInfo.like}}人点赞</text>
+  </navigator>
+  <navigator class="human-item" url="../collect/collect" hover-class="none">
+    <image src="../../images/collect.png" class="info-icon"></image>
+    <text class="item-text">{{userInfo.collection}}人收藏</text>
+  </navigator>
+</view>
+<view class="site-about">
+    <view class="about-mine">
+      <text>关于我</text>
+    </view>
+    <text class="about-introduce" wx:if="{{!userInfo.introduction}}">一句话介绍一下自己，让更多的人了解你</text>
+    <text class="about-introduce" wx:else>{{userInfo.introduction}}</text>
+  </view>
+<view class="site-impress">
+  <text class="my-impress">我的印象</text>
+  <view class="impress-label label-height" wx:if = "{{userInfo.impressList == ''}}">
+    <text class="examine">没有朋友给你添加印象</text>
+  </view>
+  <view class="impress-label" wx:else>
+    <view class="label"  wx:for = "{{userInfo.impressList}}">
+      <text class="label-text">{{item.impression_name}}</text>
+      <text class="label-num">{{item.num}}</text>
+    </view>
+  </view>
+</view>
+<view class="provide">该名片由名名mm提供服务</view>
+<view class="site-footer" wx:if="{{accredit == false}}">
+  <navigator url="" class="footer-collect">收藏该名片</navigator>
+  <navigator url="" class="footer-set">创建我的名片</navigator>
+</view>
+<view class="site-footer" wx:else>
+  <navigator url="" class="footer-collect">收藏该名片</navigator>
+  <navigator url="" class="footer-set">查看我的名片</navigator>
+</view>

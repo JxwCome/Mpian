@@ -1,0 +1,151 @@
+
+var label = {
+  data: [
+    {
+      text: '吃货',
+      id: 1
+    },
+    {
+      text: '购物狂',
+      id: 2
+    },
+    {
+      text: '疯狂',
+      id: 1
+    },
+    {
+      text: '女汉子',
+      id: 1
+    },
+    {
+      text: '小清新',
+      id: 2
+    }
+  ],
+  picture: '../../images/man.png',
+  dimension: '../../images/man.png'
+};
+var collect = {
+  list: [
+    {
+      img: '../../images/man.png',
+      name: '姓名'
+    },
+    {
+      img: '../../images/man.png',
+      name: '姓名'
+    },
+    {
+      img: '../../images/man.png',
+      name: '姓名'
+    }
+  ]
+};
+var praise = {
+  list: [
+    {
+      img: '../../images/man.png',
+      name: '姓名'
+    },
+    {
+      img: '../../images/man.png',
+      name: '姓名'
+    },
+    {
+      img: '../../images/man.png',
+      name: '姓名'
+    }
+  ]
+};
+var impress = {
+  labelTypeMan: [
+    { text: '老司机' },
+    { text: '肌肉男' },
+    { text: '工作狂' },
+    { text: '吃货' },
+    { text: '愤青' },
+    { text: '帅' },
+    { text: '自恋' },
+    { text: '热情' },
+    { text: '会生活' },
+    { text: '闷骚' },
+    { text: '靠谱' },
+    { text: '幽默' },
+    { text: '暖男' },
+    { text: '宅男' },
+    { text: '污' },
+    { text: '成熟' },
+    { text: '逗B' }
+  ],
+  labelTypeWoman: [
+    { text: '女神' },
+    { text: '老司机' },
+    { text: '萌妹子' },
+    { text: '吃货' },
+    { text: '情商高' },
+    { text: '宅' },
+    { text: '自恋' },
+    { text: '购物狂' },
+    { text: '学霸' },
+    { text: '小清新' },
+    { text: '强迫症' },
+    { text: '疯狂' },
+    { text: '高冷' },
+    { text: '女汉子' },
+    { text: '逗B' }
+  ],
+  labelElse: [
+    {
+      text: '吃货',
+      id: 1
+    },
+    {
+      text: '购物狂',
+      id: 2
+    },
+    {
+      text: '疯狂',
+      id: 1
+    },
+    {
+      text: '女汉子',
+      id: 1
+    },
+    {
+      text: '小清新',
+      id: 2
+    }
+  ]
+};
+var effect = {
+  label:[
+    {
+      text: '吃货',
+      id: 1
+    },
+    {
+      text: '购物狂',
+      id: 2
+    },
+    {
+      text: '疯狂',
+      id: 1
+    },
+    {
+      text: '女汉子',
+      id: 1
+    },
+    {
+      text: '小清新',
+      id: 2
+    }
+  ]
+}
+
+module.exports = {
+  label: label,
+  collect: collect,
+  praise: praise,
+  impress: impress,
+  effect: effect
+}

@@ -1,0 +1,156 @@
+/* partner.wxss */
+.site-info{
+  overflow: hidden;
+}
+.info{
+  margin: 10rpx;
+  position: relative;
+  padding: 20rpx;
+  box-shadow: 0 0 20rpx rgba(0,0,0,0.1);
+}
+.info-name,.info-job,.info-company,.info-telephone,.info-email{
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #000;
+}
+.info-job{
+  line-height: 60rpx;
+}
+.info-icon{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.info-words{
+  font-size: 30rpx;
+}
+.name,.sex,.job{
+  font-size: 36rpx;
+  margin-right: 40rpx;
+}
+.sex,.job{
+  font-size: 28rpx;
+}
+.info-picture{
+  position: absolute;
+  right: 20rpx;
+  top: 38rpx;
+}
+.picture{
+  width: 120rpx;
+  height: 120rpx;
+}
+.info-dimension{
+  position: absolute;
+  right: 20rpx;
+  bottom: 30rpx;
+}
+.dimension{
+  width: 40rpx;
+  height: 40rpx;
+}
+.site-human{
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  border-bottom: 6rpx solid #f2f2f2;
+  overflow: hidden;
+}
+.human-item{
+  width: 33.33%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-text{
+  font-size: 24rpx;
+}
+.site-about{
+  border-bottom: 6rpx solid #f2f2f2;
+}
+.about-mine,.about-introduce{
+  height: 70rpx;
+  display: block;
+  line-height: 70rpx;
+  padding-left: 20rpx;
+}
+.about-mine text{
+  font-size: 28rpx;
+}
+.about-mine image{
+  float: right;
+  margin: 24rpx 20rpx 0 0;
+  width: 12rpx;
+  height: 22rpx;
+}
+.about-introduce{
+  color: #999;
+  line-height: 60rpx;
+  font-size: 25rpx;
+}
+.site-impress{
+  width: 100%;
+  border-bottom: 6rpx solid #f2f2f2;
+}
+.my-impress{
+  padding-left: 20rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  line-height: 70rpx;
+}
+.impress-label{
+  overflow: hidden;
+  padding: 0 20rpx;
+  margin-bottom: 80rpx;
+}
+.label-height{
+  height: 150rpx;
+  line-height: 150rpx;
+}
+navigator,.label{
+  display: inline-block;
+}
+.label{
+  float: left;
+  margin: 0 20rpx 20rpx 0;
+}
+.label-text{
+  float: left;
+  font-size: 28rpx;
+  color: #fff;
+  padding: 12rpx;
+  background: #68C49F;
+  border-bottom-left-radius: 8rpx;
+  border-top-left-radius: 8rpx;
+}
+.label-num{
+  float: left;
+  padding: 12rpx;
+  background: #209C82;
+  font-size: 28rpx;
+  color: #fff;
+  border-top-right-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+}
+.provide{
+  text-align: center;
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 76rpx;
+}
+.site-footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 88rpx;
+  width: 100%;
+  border-top: 1rpx solid #bdbdbd;
+  line-height: 88rpx;
+  text-align: center
+}
+.footer-collect,.footer-set{
+  float: left;
+  width: 50%;
+  font-size: 28rpx;
+  color: #333;
+}

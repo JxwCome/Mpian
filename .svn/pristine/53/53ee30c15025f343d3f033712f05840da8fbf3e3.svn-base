@@ -1,0 +1,76 @@
+.new-build {
+  width: 720rpx;
+  margin-left: 30rpx;
+  height: 83rpx;
+  border-bottom: 1rpx #ddd solid;
+  color: #006dd5;
+  display: flex;
+  align-items: center;
+}
+.new-build image{
+  width: 22rpx;
+  height: 22rpx;
+  margin-right: 24rpx;
+}
+.card-group {
+  width: 720rpx;
+  margin-left: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #ddd;
+  position: relative;
+}
+.group-down {
+  width: 222rpx;
+  height: 80rpx;
+  position: absolute;
+  color: #fff;
+  right: 0;
+  top: 0;
+  text-align: center;
+  display: flex;
+  z-index: 2;
+}
+.group-down .rename {
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #006dd5;
+}
+.group-down .delete {
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #ed5565;
+}
+.group-up {
+  width: 720rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  box-sizing: border-box;
+  padding-right: 30rpx;
+  color: #666;
+}
+.group-up .number {
+  float: right;
+  margin-right: 30rpx;
+}
+.group-up image {
+  width: 12rpx;
+  height: 20rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 50%;
+  margin-top: -10rpx;
+}
+.remind {
+  margin-top: 80rpx;
+  font-size: 26rpx;
+  color: #999;
+  text-align: center;
+}

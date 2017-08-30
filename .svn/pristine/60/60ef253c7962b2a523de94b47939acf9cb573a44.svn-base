@@ -1,0 +1,29 @@
+/* partner.wxss */
+@import "/template/tem-impress.wxss";
+.site-impress{
+  width: 100%;
+  border-bottom: 6rpx solid #f2f2f2;
+}
+.provide{
+  text-align: center;
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 76rpx;
+}
+.site-footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 88rpx;
+  width: 100%;
+  border-top: 1rpx solid #bdbdbd;
+  line-height: 88rpx;
+  text-align: center;
+  background: #F7F7F8;
+}
+.footer-collect,.footer-set{
+  float: left;
+  width: 50%;
+  font-size: 28rpx;
+  color: #333;
+}

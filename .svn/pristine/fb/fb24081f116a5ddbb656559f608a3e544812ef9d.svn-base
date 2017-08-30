@@ -1,0 +1,37 @@
+var proof = require('../../utils/proof.js');
+Page({
+  data: {
+  
+  },
+
+  onLoad: function (options) {
+  
+  },
+  onShow: function () {
+  
+  },
+  submit:function(e){
+    console.log(e.detail.value);
+    var name = e.detail.value.name;
+    var email = e.detail.value.email;
+    if (proof.trim(name)==''){
+      wx.showModal({
+        title: '提示',
+        content: '姓名不能为空',
+        showCancel: false
+      });
+      return;
+    };
+    if (proof.trim(email)!==''){
+      if (!proof.isEmail(email)){
+        wx.showModal({
+          title: '提示',
+          content: '请输入正确的邮箱格式',
+          showCancel: false
+        });
+        return;
+      }
+    };
+    wx.navigateBack();
+  }
+})

@@ -1,0 +1,9 @@
+page {
+  background-color: #f7f7f8;
+}
+.mine-info-container {
+  width: 690rpx;
+  margin: 0 auto;
+  height: 360rpx;
+  position: relative;
+}

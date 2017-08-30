@@ -1,0 +1,35 @@
+var wxSortPickerView = require('../../wxSortPickerView/wxSortPickerView.js');
+var constract = require('../../utils/constract.js');
+var token = wx.getStorageSync('token');
+Page({
+  data: {
+    imperfect:false
+  },
+  onShow: function () {
+    var that = this;
+    wx.request({
+      url: constract.findCollect,
+      header:{token:token},
+      success:function(res){
+        console.log(res);
+        var data=res.data.data;
+        console.log(data);
+        that.setData({
+          personList:data
+        });
+        wxSortPickerView.init(data, that);
+      }
+    })
+    
+  },
+  call:function(e){
+    console.log(e);
+    var phone=e.target.dataset.phone;
+    wx.makePhoneCall({
+      phoneNumber: phone,
+    })
+  },
+  wxSortPickerViewItemTap: function (e) {
+    console.log(e.target.dataset.text);
+  }
+})

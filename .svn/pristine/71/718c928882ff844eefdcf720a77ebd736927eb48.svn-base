@@ -1,0 +1,100 @@
+<!--index.wxml-->
+<!--登录没注册-->
+<block wx:if = "{{userInfo.gender == 0}}">
+  <view class="site-user">
+    <view class="user-message">
+      <image src="{{userInfo.avatar}}" class="mes-logo"></image>
+      <view class="mes-userName">{{userInfo.name}}</view>
+    </view>
+  </view>
+  <view class="site-material">
+    <view class="material-img">
+      <image src="../../images/-information.png"></image> 
+    </view>
+    <view class="material-text">您还没有完善名片信息</view>
+    <view class="material-text">完善资料即可建立职场知名度哦~</view>
+    <navigator hover-class="none" url="/pages/add-card/add-card">
+      <button class="material-btn">立即完善资料</button>
+    </navigator>
+  </view>
+</block>
+<!--登录已注册-->
+<block wx:else>
+  <view class="site-info">
+    <view class="info">
+      <view class="info-name">
+        <text class="name">{{userInfo.name}}</text>
+        <image src="../../images/man.png" class="sex-img"></image>
+        <text class="sex">{{userInfo.gender==1?"男":"女"}}</text>
+      </view>
+      <view class="info-job">
+        <image src="../../images/position.png" class="info-icon"></image>
+        <text class="info-words">{{userInfo.job_title}}</text>
+      </view>
+      <view class="info-company">
+        <image src="../../images/company.png" class="info-icon"></image>
+        <text class="info-words">{{userInfo.company_name}}</text>
+      </view>
+      <view class="info-telephone">
+         <image src="../../images/call.png" class="info-icon"></image>
+         <text class="info-words">{{userInfo.phone}}</text>
+      </view>
+      <view class="info-email">
+         <image src="../../images/mail.png" class="info-icon"></image>
+         <text class="info-words">{{userInfo.email}}</text>
+      </view>
+      <view class="info-picture">
+        <image src="{{userInfo.avatar}}" class="picture"></image>
+      </view>
+      <navigator class="info-dimension" url="../code/code">
+        <image src="/images/erweima.png" class="dimension"></image>
+      </navigator>
+    </view>
+  </view>
+  <view class="site-human">
+    <view class="human-item">
+      <image src="../../images/renqi.png" class="info-icon"></image>
+      <text class="item-text">{{userInfo.popularity}}点人气</text>
+    </view>
+    <navigator url="../collect/collect?type=1" class="human-item" hover-class="none">
+      <image src="../../images/praise.png" class="info-icon"></image>
+      <text class="item-text">{{userInfo.like}}人点赞</text>
+    </navigator>
+    <navigator class="human-item" url="../collect/collect?type=2" hover-class="none">
+      <image src="../../images/collect.png" class="info-icon"></image>
+      <text class="item-text">{{userInfo.collection}}人收藏</text>
+    </navigator>
+  </view>
+  <view class="site-about">
+    <navigator url="/pages/edit/edit" class="about-mine" hover-class="none">
+      <text>关于我</text>
+      <image src="../../images/back.png"></image>
+    </navigator>
+    <text class="about-introduce" wx:if="{{!userInfo.introduction}}">一句话介绍一下自己，让更多的人了解你</text>
+    <text class="about-introduce" wx:else>{{userInfo.introduction}}</text>
+  </view>
+  <view class="site-impress">
+    <text class="my-impress">我的印象</text>
+    <view class="impress-label label-height" wx:if = "{{userInfo.impressList == ''}}">
+      <text class="examine">没有朋友给你添加印象</text>
+    </view>
+    <view class="impress-label" wx:else>
+      <view class="label"  wx:for = "{{userInfo.impressList}}">
+        <text class="label-text">{{item.impression_name}}</text>
+        <text class="label-num">{{item.num}}</text>
+      </view>
+    </view> 
+    <navigator url="impress/impress" class="all-impress" hover-class="none">
+      <text class="examine">查看全部印象></text>
+    </navigator>
+  </view>
+  <view class="site-share">
+    <button class="share-btn" type="primary" catchtap="share">分享我的名片</button>
+    <button class="share-btn" bindtap="generate">生成图片分享朋友圈</button>
+  </view>
+  <view class="site-module {{show==true?'show':''}}">
+    <image src="../../images/jiantou.png" class="mod-img"></image>
+    <text class="mod-text">点击右上角选择转发</text>
+    <button class="mod-btn" catchtap="know">我知道了</button>
+  </view>
+</block>
